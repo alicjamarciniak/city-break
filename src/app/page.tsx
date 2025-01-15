@@ -1,4 +1,9 @@
-import { HeroSection, ExamplesSection, NumbersSection } from './_sections';
+import {
+  HeroSection,
+  ExamplesSection,
+  NumbersSection,
+  TestimonialSection,
+} from './_sections';
 
 export default function Home() {
   return (
@@ -6,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <ExamplesSection />
       <NumbersSection />
+      <TestimonialSection />
     </>
   );
 }
