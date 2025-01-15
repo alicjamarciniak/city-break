@@ -1,0 +1,20 @@
+{
+  "regions": [
+    { "label": "greater-poland", "value": "Greater Poland" },
+    { "label": "kuyavian-pomeranian", "value": "Kuyavian-Pomeranian" },
+    { "label": "lesser-poland", "value": "Lesser Poland" },
+    { "label": "lodz", "value": "Lodz" },
+    { "label": "lower-silesian", "value": "Lower Silesian" },
+    { "label": "lublin", "value": "Lublin" },
+    { "label": "lubusz", "value": "Lubusz" },
+    { "label": "masovian", "value": "Masovian" },
+    { "label": "opole", "value": "Opole" },
+    { "label": "podlasie", "value": "Podlasie" },
+    { "label": "pomeranian", "value": "Pomeranian" },
+    { "label": "silesian", "value": "Silesian" },
+    { "label": "subcarpathian", "value": "Subcarpathian" },
+    { "label": "swietokrzyskie", "value": "Swietokrzyskie" },
+    { "label": "warmian-masurian", "value": "Warmian-Masurian" },
+    { "label": "western-pomeranian", "value": "Western-Pomeranian" }
+  ]
+}
