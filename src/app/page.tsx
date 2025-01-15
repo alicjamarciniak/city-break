@@ -1,10 +1,11 @@
-import { HeroSection, ExamplesSection } from './_sections';
+import { HeroSection, ExamplesSection, NumbersSection } from './_sections';
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <ExamplesSection />
+      <NumbersSection />
     </>
   );
 }
