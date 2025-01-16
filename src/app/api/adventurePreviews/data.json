@@ -1,0 +1,89 @@
+{
+  "adventurePreviews": [
+    {
+      "id": "1",
+      "name": "Foo foo adventure",
+      "description": "Adventure description super duper extra experience",
+      "duration": "1 day",
+      "city": "Cracow",
+      "instructor": {
+        "name": "James Dean",
+        "fallback": "JD",
+        "avatarSrc": "https://github.com/shadcn.png",
+        "avatarAlt": "@shadcn"
+      },
+      "image": {
+        "src": "https://placehold.co/300x200",
+        "alt": "foo foo adventure pic"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Beskidy hike trip",
+      "description": "Get out of the city and spend some quality time hiking beautiful (but not too challenging) mountains",
+      "duration": "3 days",
+      "city": "Szczyrk",
+      "instructor": {
+        "name": "Anne Horn",
+        "fallback": "AH",
+        "avatarSrc": "https://github.com/shadcn.png",
+        "avatarAlt": "@shadcn"
+      },
+      "image": {
+        "src": "https://placehold.co/300x200",
+        "alt": "beskidy hike pic"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Clay workshop",
+      "description": "Learn how to create beautiful clay pots and how to decorate them",
+      "duration": "6 hours",
+      "city": "Warsaw",
+      "instructor": {
+        "name": "Jan Kowalski",
+        "fallback": "JK",
+        "avatarSrc": "https://github.com/shadcn.png",
+        "avatarAlt": "@shadcn"
+      },
+      "image": {
+        "src": "https://placehold.co/300x200",
+        "alt": "clay workshop pic"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Survival lessons - camping in the wild",
+      "description": "Learn how to camp in the wilderness with little to no equipment",
+      "duration": "2 days",
+      "city": "Białowieża Forest",
+      "instructor": {
+        "name": "Karolina Sowa",
+        "fallback": "KS",
+        "avatarSrc": "https://github.com/shadcn.png",
+        "avatarAlt": "@shadcn"
+      },
+      "image": {
+        "src": "https://placehold.co/300x200",
+        "alt": "camping in the wild pic"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Survival lessons 2 - getting food in the wild",
+      "description": "Learn how to find and prepare food in wilderness",
+      "duration": "2 days",
+      "city": "Białowieża Forest",
+      "instructor": {
+        "name": "Karolina Sowa",
+        "fallback": "KS",
+        "avatarSrc": "https://github.com/shadcn.png",
+        "avatarAlt": "@shadcn"
+      },
+      "image": {
+        "src": "https://placehold.co/300x200",
+        "alt": "food in the wild pic"
+      }
+    }
+  ]
+}
