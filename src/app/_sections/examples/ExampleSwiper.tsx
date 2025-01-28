@@ -10,10 +10,10 @@ import { ChevronLeftCircle, ChevronRightCircle } from 'lucide-react';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
-import { AdventurePreview } from '@/app/api/adventurePreviews/types';
+import { type Adventure } from '@/app/types/Adventure';
 
 type ExampleSwiperProps = {
-  slides: AdventurePreview[];
+  slides: Adventure[];
 };
 
 const ExampleSwiper = ({ slides }: ExampleSwiperProps) => {
@@ -47,28 +47,30 @@ const ExampleSwiper = ({ slides }: ExampleSwiperProps) => {
           },
         }}
       >
-        {slides?.map((preview, i) => (
+        {slides?.map((adventure, i) => (
           <SwiperSlide key={`slide-adventure-preview-${i}`}>
             <div className="flex flex-col justify-center items-center">
-              <Card className="w-[300px] rounded-sm h-[200px] overflow-hidden m-1 mb-4 shadow-lg relative">
+              <Card className="w-[300px] rounded-sm h-[200px] overflow-hidden m-1 mb-7 shadow-lg relative">
                 <Image
-                  alt={preview.image.alt}
+                  alt={adventure.images[0].fields.title}
                   width={300}
                   height={200}
-                  src={preview.image.src}
+                  src={`https:${adventure.images[0].fields.file.url}`}
                 />
               </Card>
-              <Avatar className="absolute h-16 w-16 left-[220px] top-[160px]">
+              <Avatar className="absolute h-[4.3rem] w-[4.3rem] left-[230px] top-[155px]">
                 <AvatarImage
-                  src={preview.instructor.avatarSrc}
-                  alt={preview.instructor.avatarAlt}
+                  src={`https:${adventure.instructor[0].fields.avatar.fields.file.url}`}
+                  alt={adventure.instructor[0].fields.avatarAlt}
                 />
-                <AvatarFallback>{preview.instructor.fallback}</AvatarFallback>
+                <AvatarFallback>
+                  {adventure.instructor[0].fields.fallback}
+                </AvatarFallback>
               </Avatar>
               <div className="w-[300px]">
-                <h4 className="font-semibold ">{preview.name}</h4>
+                <h4 className="font-semibold truncate">{adventure.name}</h4>
                 <h6 className="text-muted-foreground text-sm">
-                  {preview.description}
+                  {adventure.shortDescription}
                 </h6>
               </div>
             </div>
