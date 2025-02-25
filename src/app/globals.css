@@ -94,12 +94,73 @@ body {
   }
 }
 
-p {
-  @apply mt-2;
+@layer components {
+  .custom-ordered-list ol {
+    counter-reset: orderedlist;
+    margin-left: 4rem;
+    margin-top: 1rem;
+  }
+
+  .custom-ordered-list ol > li {
+    position: relative;
+    counter-increment: orderedlist;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+
+  ul > li,
+  .custom-ordered-list ol > li li {
+    margin-left: 1rem;
+    list-style: disc;
+  }
+
+  .custom-ordered-list li::before {
+    content: counter(orderedlist);
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 0.75;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -4rem;
+    top: 0.1rem;
+    text-align: center;
+    color: white;
+    border-top-left-radius: 0.5rem !important;
+    border-radius: 4rem;
+    background: hsl(var(--pink-background));
+    background: linear-gradient(
+      149deg,
+      hsl(var(--special)) 30%,
+      hsl(var(--pink-background)) 100%
+    );
+  }
 }
+
 h1 {
   @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
 }
+
 h2 {
   @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+}
+
+h3 {
+  @apply scroll-m-20 text-xl font-normal tracking-tight transition-colors;
+}
+
+.rich-text h3 {
+  @apply text-special font-semibold mt-4;
+}
+
+.rich-text p {
+  @apply mt-3;
+}
+
+.rich-text hr {
+  @apply my-4 border-transparent;
 }
