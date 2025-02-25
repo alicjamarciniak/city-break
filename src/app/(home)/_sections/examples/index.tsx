@@ -3,10 +3,12 @@ import ExampleSwiper from './ExampleSwiper';
 import { fetchContentfulData } from '@/utils/contentful/contentfulFetch';
 
 const ExamplesSection = async () => {
-  const adventurePreviews = await fetchContentfulData<Adventure>('adventure');
+  const adventurePreviews = await fetchContentfulData<Adventure>('adventure', {
+    limit: 5,
+  });
 
   return (
-    <div className="bg-white p-14 relative mt-2">
+    <div className="bg-white p-14 relative">
       <div className="my-10">
         <ExampleSwiper slides={adventurePreviews} />
       </div>

@@ -33,7 +33,9 @@ const RegionSelect = async () => {
           <SelectGroup>
             <SelectLabel>Regions</SelectLabel>
             {regions.map(({ label, value }) => (
-              <SelectItem value={label}>{value}</SelectItem>
+              <SelectItem key={label} value={label}>
+                {value}
+              </SelectItem>
             ))}
           </SelectGroup>
         </SelectContent>

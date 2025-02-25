@@ -3,33 +3,27 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
-import BackgroundVideo from 'next-video/background-video';
-import SunsetVideo from '/videos/sunset.mp4';
-import SunsetPlaceholder from '@/public/images/sunset-placeholder.png';
 import RegionSelect from './RegionSelect';
 
 const HeroSection = () => {
   return (
-    <section className="h-[calc(100vh)] relative">
-      <BackgroundVideo
-        autoPlay
-        controls={false}
-        muted
-        src={SunsetVideo}
-        poster={SunsetPlaceholder}
-      >
+    <section className="h-[calc(100vh-60px)] relative">
+      <div className="relative">
+        <video autoPlay loop muted className="absolute w-[100vw]">
+          <source src="/videos/sunset.mp4" type="video/mp4" />
+        </video>
         <div className="flex flex-col justify-center relative z-10">
-          <div className="pt-[5vh] text-center text-white">
+          <div className="pt-[14vh] text-center text-white">
             <h1 className="font-thin text-4xl">
               Tired of mundane rut?
-              <span className="font-bold font-miguel text-primary block mt-4 mb-6 [text-shadow:_6px_6px_6px_rgba(0,0,0,0.4)] text-8xl tracking-[3px]">
+              <span className="animate-slideUp font-bold font-miguel text-primary block mt-4 mb-6 [text-shadow:_6px_6px_6px_rgba(0,0,0,0.4)] text-8xl tracking-[3px]">
                 Find where the thrill begins
               </span>
             </h1>
             <p>
               From outdoor activities to discovering urban gems and learning new
               crafts, every trip is designed to inspire. <br />
-              Join us and turn your next journey into an unforgettable
+              Join us and turn your precious free time into an unforgettable
               adventure!
             </p>
             <Button
@@ -64,7 +58,7 @@ const HeroSection = () => {
             </div>
           </Card>
         </div>
-      </BackgroundVideo>
+      </div>
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.3)]"></div>
     </section>
   );

@@ -3,6 +3,7 @@ import {
   ExamplesSection,
   NumbersSection,
   TestimonialSection,
+  AuthorsSection,
 } from './_sections';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <ExamplesSection />
       <NumbersSection />
       <TestimonialSection />
+      <AuthorsSection />
     </>
   );
 }
