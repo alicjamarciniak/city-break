@@ -14,3 +14,8 @@ export async function fetchContentfulData<T>(
     ...item.fields,
   })) as Array<{ id: string } & T>;
 }
+
+export async function fetchContentfulEntry<T>(id: string) {
+  const { sys, fields } = await contentfulClient.getEntry(id);
+  return { id: sys.id, ...fields } as { id: string } & T;
+}
