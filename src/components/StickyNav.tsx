@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
-import logoSrc from '../public/images/logo.png';
-
 export function StickyNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -20,10 +18,10 @@ export function StickyNav() {
         <div className="flex justify-between items-center h-[60px] relative">
           {/* Left side navigation links (hidden on mobile) */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="#" className="text-gray-700 hover:text-gray-900">
+            <Link href="/" className="text-gray-700 hover:text-gray-900">
               Home
             </Link>
-            <Link href="#" className="text-gray-700 hover:text-gray-900">
+            <Link href="/about" className="text-gray-700 hover:text-gray-900">
               About
             </Link>
           </div>
@@ -31,16 +29,25 @@ export function StickyNav() {
           {/* Logo (centered on desktop, left-aligned on mobile) */}
           <div className="flex-shrink-0 flex items-center p-2 bg-white rounded-full absolute top-0 left-0 right-0 w-[96px] mx-auto">
             <Link href="/" className="font-bold text-xl text-gray-900">
-              <Image alt="logo" src={logoSrc} width={80} height={80} />
+              <Image
+                alt="logo"
+                src="/images/logo.png"
+                width={80}
+                height={80}
+                priority
+              />
             </Link>
           </div>
 
           {/* Right side navigation links (hidden on mobile) */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="#" className="text-gray-700 hover:text-gray-900">
+            <Link
+              href="/services"
+              className="text-gray-700 hover:text-gray-900"
+            >
               Services
             </Link>
-            <Link href="#" className="text-gray-700 hover:text-gray-900">
+            <Link href="/contact" className="text-gray-700 hover:text-gray-900">
               Contact
             </Link>
           </div>
