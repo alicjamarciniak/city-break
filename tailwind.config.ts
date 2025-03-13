@@ -119,6 +119,9 @@ const config: Config = {
         '.t-small': {
           '@apply text-[0.375rem] lg:text-[0.875rem]': '',
         },
+        '.text-2xs': {
+          '@apply text-[0.55rem] leading-normal': '',
+        },
       });
     }),
   ],

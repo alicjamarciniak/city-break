@@ -18,7 +18,7 @@ const RegularCalendar = ({ groups }: CalendarProps) => {
         <TabsList className="flex flex-row gap-2 bg-transparent h-auto p-0 justify-start">
           {groups.map((group) => (
             <Tab key={group.groupName} group={group} hasEndDate>
-              <div className="text-xs w-[50%]">
+              <div className="text-xs lg:w-[50%]">
                 {group.weekDays?.map((weekday) => (
                   <div key={weekday} className="flex justify-between">
                     <div>{weekday}</div>

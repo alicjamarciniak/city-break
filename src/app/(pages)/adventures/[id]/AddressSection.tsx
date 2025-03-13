@@ -17,7 +17,7 @@ const AddressSection = ({ address, facilityName }: AddressSectionProps) => {
   return (
     <div className="mt-10">
       <h3 className="t-h3">Where do we meet?</h3>
-      <div className="mt-6 flex flex-col gap-3">
+      <div className="mt-6 flex flex-col gap-3 text-sm lg:text-base">
         <p>
           <HomeIcon
             height={20}

@@ -8,8 +8,8 @@ const TestimonialsSection = async () => {
 
   return (
     <>
-      <div className="flex bg-gradient-to-b from-dark-background to-black relative">
-        <div className="flex py-10">
+      <div className="flex h-[100vh] lg:h-max bg-gradient-to-b from-dark-background to-black relative">
+        <div className="hidden lg:flex py-10">
           <div className="flex-[1]"></div>
           <div className="flex-[3] overflow-hidden">
             <Spline
@@ -19,7 +19,7 @@ const TestimonialsSection = async () => {
           </div>
         </div>
 
-        <div className="absolute w-[40%] top-0 bottom-0 left-[200px] z-10 text-dark-foreground p-10">
+        <div className="absolute w-full lg:w-[40%] top-0 bottom-0 lg:left-[200px] z-10 text-dark-foreground p-10">
           <h4 className="text-2xl mt-8 text-left font-thin mb-10">
             What others
             <span className="font-oswald text-4xl font-bold uppercase block">

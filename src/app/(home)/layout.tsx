@@ -41,13 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <StickyNav />
+      <StickyNav isHomepage />
       <div className="lg:mt-[60px]">
-        <section>
-          <div className="mt-[90px] lg:mt-[60px] mb-[80px] px-6 lg:px-40">
-            {children}
-          </div>
-        </section>
+        <section>{children}</section>
       </div>
     </>
   );

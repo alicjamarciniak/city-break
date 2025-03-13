@@ -8,12 +8,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import { type Testimonial } from '@/app/types/Testimonial';
+import useMediaQueries from '@/hooks/useMediaQueries';
 
 type TestimonialSwiperProps = {
   slides: Testimonial[];
 };
 
 const TestimonialSwiper = ({ slides }: TestimonialSwiperProps) => {
+  const { isMdDevice } = useMediaQueries();
+  const isMobile = isMdDevice();
+
   return (
     <Swiper
       slidesPerView={1}
@@ -37,9 +41,9 @@ const TestimonialSwiper = ({ slides }: TestimonialSwiperProps) => {
     >
       {slides?.map((testimonial) => (
         <SwiperSlide key={`slide-testimonial-${testimonial.id}`}>
-          <div className="relative py-20 pr-10 bg-dark">
-            <div className="absolute z-[-1] opacity-20 top-0 right-10 transform rotate-180">
-              <LeftQuote size={150} color="white" />
+          <div className="relative py-20 lg:pr-10 bg-dark">
+            <div className="absolute z-[-1] opacity-20 top-14 lg:top-0 right-0 lg:right-10 transform rotate-180">
+              <LeftQuote size={isMobile ? 100 : 150} color="white" />
             </div>
             <div className="text-primary flex flex-row justify-left mb-6 gap-2">
               <StarFilledIcon className="w-5 h-5" />

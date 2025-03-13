@@ -52,7 +52,7 @@ const ExampleSwiper = ({ slides }: ExampleSwiperProps) => {
           <SwiperSlide key={`slide-adventure-preview-${adventure.id}`}>
             <Link href={`/adventures/${adventure.id}`}>
               <div className="flex flex-col justify-center items-center">
-                <Card className="w-[300px] rounded-sm h-[200px] overflow-hidden m-1 mb-7 shadow-lg relative">
+                <Card className="w-[250px] lg:w-[300px] rounded-sm h-auto lg:h-[200px] overflow-hidden m-1 mb-7 shadow-lg relative">
                   <Image
                     alt={adventure.images[0].fields.title}
                     width={300}
@@ -60,7 +60,7 @@ const ExampleSwiper = ({ slides }: ExampleSwiperProps) => {
                     src={`https:${adventure.images[0].fields.file.url}`}
                   />
                 </Card>
-                <Avatar className="absolute h-[4.3rem] w-[4.3rem] left-[230px] top-[155px]">
+                <Avatar className="absolute h-[3.3rem] w-[3.3rem] lg:h-[4.3rem] lg:w-[4.3rem] left-[190px] top-[135px] lg:left-[230px] lg:top-[155px]">
                   <AvatarImage
                     src={`https:${adventure.instructor[0].fields.avatar.fields.file.url}`}
                     alt={adventure.instructor[0].fields.avatarAlt}
@@ -69,7 +69,7 @@ const ExampleSwiper = ({ slides }: ExampleSwiperProps) => {
                     {adventure.instructor[0].fields.fallback}
                   </AvatarFallback>
                 </Avatar>
-                <div className="w-[300px]">
+                <div className="w-[250px] lg:w-[300px]">
                   <h4 className="font-semibold truncate">{adventure.name}</h4>
                   <h6 className="text-muted-foreground text-sm">
                     {adventure.shortDescription}

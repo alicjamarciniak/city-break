@@ -1,4 +1,7 @@
+'use client';
+
 import { ProfileBox } from '@/components';
+import useMediaQueries from '@/hooks/useMediaQueries';
 import {
   TwitterLogoIcon,
   LinkedInLogoIcon,
@@ -6,24 +9,28 @@ import {
 } from '@radix-ui/react-icons';
 
 const AuthorsSection = () => {
+  const { isMdDevice } = useMediaQueries();
+  const isMobile = isMdDevice();
+  const iconSize = isMobile ? 16 : 25;
+
   const socialIcons = [
-    <TwitterLogoIcon width={25} height={25} />,
-    <LinkedInLogoIcon width={25} height={25} />,
-    <InstagramLogoIcon width={25} height={25} />,
+    <TwitterLogoIcon width={iconSize} height={iconSize} />,
+    <LinkedInLogoIcon width={iconSize} height={iconSize} />,
+    <InstagramLogoIcon width={iconSize} height={iconSize} />,
   ];
 
   return (
-    <div className="bg-pink-background px-20 py-32 flex flex-row justify-evenly">
+    <div className="bg-pink-background px-6 lg:px-20 py-32 flex flex-col lg:flex-row justify-evenly">
       <div>
-        <h4 className="text-2xl mt-8 font-thin mb-10">
+        <h4 className="text-2xl lg:mt-8 font-thin mb-10">
           <span className="font-oswald text-8xl font-bold uppercase block">
             People
           </span>
           behind the City Breakers
         </h4>
       </div>
-      <div className="flex flex-row gap-16">
-        <div className="w-[300px]">
+      <div className="flex flex-row gap-6 lg:gap-16">
+        <div className="w-[150px] lg:w-[300px]">
           <ProfileBox
             profileUrl="mira-kowalska"
             firstName="Mira"
@@ -33,7 +40,7 @@ const AuthorsSection = () => {
             socialIcons={socialIcons}
           />
         </div>
-        <div className="w-[300px]">
+        <div className="w-[150px] lg:w-[300px]">
           <ProfileBox
             profileUrl="artem-bondar"
             firstName="Artem"

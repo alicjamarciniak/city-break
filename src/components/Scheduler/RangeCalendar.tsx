@@ -16,21 +16,21 @@ const RangeCalendar = ({ groups }: CalendarProps) => {
         <TabsList className="flex flex-row gap-2 bg-transparent h-auto justify-start overflow-x-scroll">
           {groups.map((group) => (
             <Tab key={group.groupName} group={group} hasEndDate>
-              <div className="text-xs">
-                <div className="flex justify-between">
+              <div className="text-2xs lg:text-xs flex flex-col gap-2 lg:gap-0">
+                <div className="flex justify-between flex-col lg:flex-row">
                   START:
-                  <div>
+                  <div className="text-2xs lg:text-xs font-extrabold lg:font-normal">
                     {format(group.startDate, 'H aa')}
-                    <span className="ml-2 font-thin">
+                    <span className="ml-2 font-normal lg:font-thin">
                       ({format(group.startDate, 'dd MMM yyyy')})
                     </span>
                   </div>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col lg:flex-row">
                   END:
-                  <div>
+                  <div className="text-2xs lg:text-xs font-extrabold lg:font-normal">
                     {format(group.endDate, 'H aa')}
-                    <span className="ml-1 font-thin">
+                    <span className="ml-1 font-normal lg:font-thin">
                       ({format(group.endDate, 'dd MMM yyyy')})
                     </span>
                   </div>

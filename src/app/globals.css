@@ -108,10 +108,14 @@ body {
     padding-left: 1rem;
   }
 
-  ul > li,
-  .custom-ordered-list ol > li li {
+  .custom-ordered-list ul > li {
     margin-left: 1rem;
     list-style: disc;
+  }
+
+  .custom-ordered-list ol > li li {
+    margin-left: 0;
+    list-style: none;
   }
 
   .custom-ordered-list li::before {
@@ -139,6 +143,20 @@ body {
       hsl(var(--pink-background)) 100%
     );
   }
+
+  @media only screen and (max-width: 768px) {
+    .custom-ordered-list li::before {
+      font-size: 0.8rem;
+      width: 2rem;
+      height: 2rem;
+      left: -2rem;
+      border-radius: 2rem;
+    }
+
+    .custom-ordered-list ol {
+      margin-left: 2rem;
+    }
+  }
 }
 
 h1 {
@@ -163,4 +181,13 @@ h3 {
 
 .rich-text hr {
   @apply my-4 border-transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .rich-text p {
+    @apply text-sm mt-2;
+  }
+  .rich-text h6 {
+    @apply text-lg text-left;
+  }
 }

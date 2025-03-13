@@ -8,6 +8,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { type LatLngTuple, type Marker as MarkerType, divIcon } from 'leaflet';
 import { RefAttributes, useEffect, useRef, useState } from 'react';
 import useCoordinates from './useCoordinates';
+import useMediaQueries from '@/hooks/useMediaQueries';
 
 type MapProps = {
   address: string;
@@ -31,7 +32,6 @@ const markerHtmlStyles = `
 const icon = divIcon({
   className: 'my-custom-pin',
   iconAnchor: [0, 24],
-  // labelAnchor: [-6, 0],
   popupAnchor: [0, -36],
   html: `<span style="${markerHtmlStyles}" />`,
 });
@@ -40,6 +40,8 @@ const Map = ({ address, facilityName }: MapProps) => {
   const [position, setPosition] = useState<LatLngTuple>([0, 0]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { isMdDevice } = useMediaQueries();
+  const isMobile = isMdDevice();
 
   const markerRef = useRef<MarkerType>(null);
 
@@ -64,7 +66,12 @@ const Map = ({ address, facilityName }: MapProps) => {
     <div className="w-full h-[400px] sticky my-10 ">
       {loading && <div>Loading...</div>}
       {!loading && position && (
-        <MapContainer center={position} zoom={13} className="h-full w-full">
+        <MapContainer
+          center={position}
+          zoom={13}
+          className="h-full w-full"
+          scrollWheelZoom={!isMobile}
+        >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <Marker
             ref={markerRef}

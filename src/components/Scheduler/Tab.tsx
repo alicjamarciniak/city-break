@@ -14,25 +14,25 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
   return (
     <TabsTrigger
       value={group.groupName}
-      className="group flex flex-[1] bg-yukon-background/50 text-yukon-foreground 
-      rounded-none pt-10 px-10 pb-0 data-[state=active]:bg-yukon-background 
+      className="group flex basis-[49%] shrink-0 grow-0 flex-[1] bg-yukon-background/50 text-yukon-foreground 
+      rounded-none pt-6 lg:pt-10 px-6 lg:px-10 pb-0 data-[state=active]:bg-yukon-background 
       data-[state=active]:text-yukon-foreground w-full [&data-[state=active]>.join-btn]:bg-black"
     >
       <div className="text-left w-full">
-        <div className="flex flex-row gap-5 ">
-          <div className="text-5xl font-thin">
+        <div className="flex flex-row gap-3 lg:gap-5 ">
+          <div className="text-2xl lg:text-5xl font-thin">
             {format(group.startDate, 'dd')}
-            <span className="text-sm font-normal uppercase block">
+            <span className="text-2xs lg:text-sm font-normal uppercase block">
               {format(group.startDate, 'MMMM')}
             </span>
           </div>
 
           {hasEndDate && (
             <>
-              <span className="text-5xl font-thin">-</span>
-              <div className="text-5xl font-thin">
+              <span className="text-2xl lg:text-5xl font-thin">-</span>
+              <div className="text-2xl lg:text-5xl font-thin">
                 {format(group.endDate, 'dd')}
-                <span className="text-sm font-normal uppercase block">
+                <span className="text-2xs lg:text-sm font-normal uppercase block">
                   {format(group.endDate, 'MMMM')}
                 </span>
               </div>
@@ -40,15 +40,15 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
           )}
         </div>
 
-        <p className="font-thin text-lg mt-6 mb-6 text-wrap line-clamp-2 w-[200px]">
+        <p className="font-thin text-xs lg:text-lg mt-3 lg:mt-6 mb-3 lg:mb-6 text-wrap line-clamp-1 lg:line-clamp-2 lg:w-[200px]">
           {group.groupName}
         </p>
 
         {children}
 
-        <div className="mt-6 flex justify-center pb-4 relative h-16">
+        <div className="mt-0 lg:mt-6 flex justify-center pb-4 relative h-16">
           <div
-            className="join-btn rounded-none w-full border-white border p-3 text-center absolute 
+            className="join-btn text-xs lg:text-base rounded-none w-full border-white border p-2 lg:p-3 text-center absolute 
             bottom-3 bg-gradient-to-br from-white/20 from-20% to-white/10 transition-all
              hover:font-semibold hover:bottom-4 hover:shadow-md hover:shadow-white/60
              group-data-[state=inactive]:pointer-events-none"

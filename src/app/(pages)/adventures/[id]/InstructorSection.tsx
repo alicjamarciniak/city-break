@@ -13,11 +13,12 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
   return (
     <div>
       <Card
-        className={`bg-swamp-background/10 border-yukon-background/50 text-dark-foreground mb-2 mt-10 p-10`}
+        className={`flex bg-swamp-background/10 border-transparent lg:border-yukon-background/50 text-dark-foreground 
+        mb-2 mt-3 lg:mt-10 p-0 lg:p-10 rounded-tr-[50px] lg:rounded-tr-xl`}
       >
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
           <div>
-            <div className="h-[200px] w-[150px] relative rounded-tr-[50px] rounded-bl-[50px] overflow-hidden">
+            <div className="h-[200px] w-auto lg:w-[150px] relative rounded-tr-[50px] rounded-bl-[50px] overflow-hidden">
               <Image
                 src={`https:${instructor.fields.avatar.fields.file.url}`}
                 alt={instructor.fields.avatarAlt}

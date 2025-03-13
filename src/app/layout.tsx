@@ -49,9 +49,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${miguelDeNorthernFont.variable} ${robotoFont.variable} ${oswaldFont.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-[100vh]">
-          <StickyNav />
-          <div className="mt-[60px]">{children}</div>
+        <div className="flex flex-col min-h-[100vh] relative ">
+          {children}
           <Footer />
         </div>
       </body>

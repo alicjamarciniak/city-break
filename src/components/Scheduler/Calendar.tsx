@@ -6,9 +6,10 @@ const Calendar = (props: CalendarProps) => {
     <ShCalendar
       {...props}
       locale={enGB}
-      className="flex justify-center p-6 text-lg [&_head]:h-12 [&_th]:w-16 [&_th]:h-12 
-      [&_th]:text-base [&_th]:flex [&_th]:items-center [&_th]:justify-center 
-      [&_td]:w-16 [&_td]:h-12 [&_button]:w-16 [&_button]:h-12 [&_button]:text-base"
+      className="flex justify-center p-6 text-xs leading-tight
+      lg:[&_head]:h-12 lg:[&_th]:w-16 lg:[&_th]:h-12 
+      lg:[&_th]:text-base lg:[&_th]:flex lg:[&_th]:items-center lg:[&_th]:justify-center 
+      lg:[&_td]:w-16 lg:[&_td]:h-12 lg:[&_button]:w-16 lg:[&_button]:h-12 lg:[&_button]:text-base"
     />
   );
 };

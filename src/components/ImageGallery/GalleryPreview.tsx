@@ -1,3 +1,6 @@
+'use client';
+
+import useMediaQueries from '@/hooks/useMediaQueries';
 import Image from 'next/image';
 
 type GalleryPreviewProps = {
@@ -6,6 +9,9 @@ type GalleryPreviewProps = {
 };
 
 const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
+  const { isMdDevice } = useMediaQueries();
+  const isMobile = isMdDevice();
+
   const gridBases = [
     { col1: 100, col2: 0, col3: 0 },
     { col1: 50, col2: 0, col3: 50 },
@@ -19,7 +25,7 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
     <div className={`h-full w-full min-w-100 flex gap-3 relative`}>
       <div
         className={`flex relative rounded-md overflow-hidden`}
-        style={{ flexBasis: `${col1}%` }}
+        style={{ flexBasis: `${!isMobile ? col1 : 100}%` }}
       >
         <Image
           alt={images[0].alt}
@@ -28,7 +34,8 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
           style={{ objectFit: 'cover' }}
         />
       </div>
-      {length > 2 && (
+
+      {!isMobile && length > 2 && (
         <div
           className={`flex flex-col gap-3`}
           style={{ flexBasis: `${col2}%` }}
@@ -51,7 +58,7 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
           </div>
         </div>
       )}
-      {length !== 1 && length !== 3 && (
+      {!isMobile && length !== 1 && length !== 3 && (
         <div
           className={`flex relative rounded-md overflow-hidden`}
           style={{ flexBasis: `${col3}%` }}
@@ -64,15 +71,18 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
           />
         </div>
       )}
+
       <button
-        className="absolute bottom-5 right-5 bg-white px-4 py-1 rounded-full shadow-lg"
+        className="absolute flex bottom-5 right-5 bg-white px-4 py-2 rounded-full shadow-lg"
         onClick={() => {
           callback();
           // document.body.style.height = '100vh';
           // document.body.style.overflowY = 'hidden';
         }}
       >
-        <small className="t-small font-thin">See full gallery ({length})</small>
+        <small className="text-2xs lg:text-xs font-thin">
+          See full gallery ({length})
+        </small>
       </button>
     </div>
   );
