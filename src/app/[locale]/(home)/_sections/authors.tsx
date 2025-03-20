@@ -7,8 +7,10 @@ import {
   LinkedInLogoIcon,
   InstagramLogoIcon,
 } from '@radix-ui/react-icons';
+import { useTranslations } from 'next-intl';
 
 const AuthorsSection = () => {
+  const t = useTranslations('HomePage');
   const { isMdDevice } = useMediaQueries();
   const isMobile = isMdDevice();
   const iconSize = isMobile ? 16 : 25;
@@ -24,9 +26,9 @@ const AuthorsSection = () => {
       <div>
         <h4 className="text-2xl lg:mt-8 font-thin mb-10">
           <span className="font-oswald text-8xl font-bold uppercase block">
-            People
+            {t('authors.title')}
           </span>
-          behind the City Breakers
+          {t('authors.subtitle')}
         </h4>
       </div>
       <div className="flex flex-row gap-6 lg:gap-16">
@@ -35,7 +37,7 @@ const AuthorsSection = () => {
             profileUrl="mira-kowalska"
             firstName="Mira"
             lastName="Kowalska"
-            text="CEO and founder of City Breakers"
+            text={t('authors.miraText')}
             src="/images/Mira.jpg"
             socialIcons={socialIcons}
           />
@@ -45,7 +47,7 @@ const AuthorsSection = () => {
             profileUrl="artem-bondar"
             firstName="Artem"
             lastName="Bondar"
-            text="COO and co-founder of City Breakers"
+            text={t('authors.artemText')}
             src="/images/Artem.jpg"
             socialIcons={socialIcons}
           />

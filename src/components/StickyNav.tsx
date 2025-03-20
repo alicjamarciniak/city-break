@@ -4,12 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 type StickyNavProps = {
   isHomepage?: boolean;
 };
 
 export function StickyNav({ isHomepage = false }: StickyNavProps) {
+  const t = useTranslations('Nav');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -33,10 +36,10 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
             {/* Left side navigation links (hidden on mobile) */}
             <div className="hidden md:flex items-center space-x-4">
               <Link href="/" className="text-gray-700 hover:text-gray-900">
-                Home
+                {t('linkHome')}
               </Link>
               <Link href="/about" className="text-gray-700 hover:text-gray-900">
-                About
+                {t('linkAbout')}
               </Link>
             </div>
 
@@ -62,14 +65,15 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
                 href="/services"
                 className="text-gray-700 hover:text-gray-900"
               >
-                Services
+                {t('linkServices')}
               </Link>
               <Link
                 href="/contact"
                 className="text-gray-700 hover:text-gray-900"
               >
-                Contact
+                {t('linkContact')}
               </Link>
+              <LanguageSwitcher />
             </div>
 
             {/* Mobile menu button */}
@@ -96,26 +100,27 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
                 href="#"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
               >
-                Home
+                {t('linkHome')}
               </Link>
               <Link
                 href="#"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
               >
-                About
+                {t('linkAbout')}
               </Link>
               <Link
                 href="#"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
               >
-                Services
+                {t('linkServices')}
               </Link>
               <Link
                 href="#"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
               >
-                Contact
+                {t('linkContact')}
               </Link>
+              <LanguageSwitcher />
             </div>
           </div>
         )}

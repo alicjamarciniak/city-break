@@ -1,10 +1,24 @@
 import { type Testimonial } from '@/app/types/Testimonial';
-import { fetchContentfulData } from '@/utils/contentful/contentfulFetch';
+// import { fetchContentfulData } from '@/app/api/contentful/contentfulFetch';
 import Spline from '@splinetool/react-spline/next';
 import TestimonialSwiper from './TestimonialSwiper';
+import { getTranslations } from 'next-intl/server';
+
+const getTestimonials = async (): Promise<Testimonial[]> => {
+  const response = await fetch(
+    `http://localhost:3000/api/contentful/entries?contentType=testimonial`,
+    {
+      method: 'GET',
+    },
+  );
+  const data = await response.json();
+  return data;
+};
 
 const TestimonialsSection = async () => {
-  const testimonials = await fetchContentfulData<Testimonial>('testimonial');
+  const t = await getTranslations('HomePage');
+  // const testimonials = await fetchContentfulData<Testimonial>('testimonial');
+  const testimonials = await getTestimonials();
 
   return (
     <>
@@ -21,9 +35,9 @@ const TestimonialsSection = async () => {
 
         <div className="absolute w-full lg:w-[40%] top-0 bottom-0 lg:left-[200px] z-10 text-dark-foreground p-10">
           <h4 className="text-2xl mt-8 text-left font-thin mb-10">
-            What others
+            {t('testimonials.subtitle')}
             <span className="font-oswald text-4xl font-bold uppercase block">
-              say about us
+              {t('testimonials.title')}
             </span>
           </h4>
 

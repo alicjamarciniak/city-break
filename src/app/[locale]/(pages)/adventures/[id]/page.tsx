@@ -1,16 +1,34 @@
 import { Adventure } from '@/app/types/Adventure';
 import RichText from '@/utils/contentful/components/RichText';
-import {
-  fetchContentfulData,
-  fetchContentfulEntry,
-} from '@/utils/contentful/contentfulFetch';
 import InstructorSection from './InstructorSection';
 import Map from './AddressSection';
 import { ImageGallery, OrderedList } from '@/components';
 import SchedulerSection from './SchedulerSection';
 
+const getAdventures = async (): Promise<Adventure[]> => {
+  const response = await fetch(
+    `http://localhost:3000/api/contentful/entries?contentType=adventure`,
+    {
+      method: 'GET',
+    },
+  );
+  const data = await response.json();
+  return data;
+};
+
+const getSingleAdventure = async (id: string): Promise<Adventure> => {
+  const response = await fetch(
+    `http://localhost:3000/api/contentful/entry?contentType=adventure&entryId=${id}`,
+    {
+      method: 'GET',
+    },
+  );
+  const data = await response.json();
+  return data;
+};
+
 export async function generateStaticParams() {
-  const posts = await fetchContentfulData<Adventure>('adventure');
+  const posts = await getAdventures();
 
   return posts.map((post) => ({
     id: post.id.toString(),
@@ -19,7 +37,7 @@ export async function generateStaticParams() {
 
 const AuthorPage = async ({ params }: { params: Promise<{ id: number }> }) => {
   const { id } = await params;
-  const adventure = await fetchContentfulEntry<Adventure>(id.toString());
+  const adventure = await getSingleAdventure(id.toString());
 
   const images = adventure.images.map(
     ({

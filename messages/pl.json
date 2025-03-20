@@ -1,0 +1,65 @@
+{
+  "Footer": {
+    "copyrightText": "© City Breakers. Wszelkie prawa zastrzeżone",
+    "linkAbout": "O nas",
+    "linkContact": "Kontakt",
+    "linkHome": "Strona główna",
+    "linkPrivacyPolicy": "Polityka prywatności",
+    "linkServices": "Usługi",
+    "linkTermsOfService": "Warunki korzystania z usług",
+    "newsletterBtn": "Zapisz się",
+    "navLinksTitle": "Czego szukasz?",
+    "newsletterText1": "Zero",
+    "newsletterText2": "spamu.",
+    "newsletterText3": "Jeden",
+    "newsletterText4": "email dziennie.",
+    "newsletterText5": "Wszystkie",
+    "newsletterText6": "gorące oferty.",
+    "newsletterTitle": "Newsletter",
+    "newsletterPlaceholder": "Wpisz swój email"
+  },
+  "HomePage": {
+    "authors": {
+      "artemText": "COO i współzałożyciel City Breakers",
+      "miraText": "CEO and założyciel City Breakers",
+      "subtitle": "stojący za City Breakers",
+      "title": "Ludzie"
+    },
+    "hero": {
+      "dateLabel": "Kiedy?",
+      "description1": "Od zajęć na świeżym powietrzu po odkrywanie miejskich perełek i naukę nowych umiejętności, każde nasze wydarzenie jest zaplanowane tak, aby inspirować.",
+      "description2": "Dołącz do nas i zamień swój cenny, wolny czas w niezapomnianą przygodę!",
+      "exploreBtn": "Odkryj",
+      "mainTitle": "Odkryj co w trawie piszczy",
+      "participantsLabel": "Liczba uczestników",
+      "region": "Województwo",
+      "regionPlaceholder": "Wybierz województwo",
+      "regionSelectLabel": "Województwa",
+      "search": "Szukaj",
+      "subtitle": "Masz dość nudy?"
+    },
+    "numbers": {
+      "adventurePrograms": "zorganizowanych przygód",
+      "happyClients": "zadowolonych klientów",
+      "hoursOfJoy": "godzin zabawy",
+      "seeMore": "Więcej",
+      "subtitle": "Wzieliście udział",
+      "titleStart": "w ponad",
+      "titleEnd": "zachwycających aktywnościach"
+    },
+    "testimonials": {
+      "subtitle": "Co mówią",
+      "title": "o nas inni"
+    }
+  },
+  "Nav": {
+    "linkAbout": "O nas",
+    "linkContact": "Kontakt",
+    "linkHome": "Strona główna",
+    "linkServices": "Usługi"
+  },
+  "LanguageSwitcher": {
+    "label": "Zmień język",
+    "locale": "{locale, select, pl {🇵🇱 Polish} en {🇬🇧 English} other {Unknown}}"
+  }
+}
