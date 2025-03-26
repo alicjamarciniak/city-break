@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import { Locale } from 'next-intl';
-import { ReactNode, useTransition } from 'react';
+import { ChangeEvent, FormEventHandler, ReactNode, useTransition } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import {
   Select,
@@ -44,9 +44,9 @@ const LanguageSwitcherSelect = ({
 
   return (
     <Select
-      onValueChange={onSelectChange}
       defaultValue={defaultValue}
       disabled={isPending}
+      onValueChange={onSelectChange}
     >
       <SelectTrigger className="min-w-[90px]">
         <SelectValue defaultValue={defaultValue} />

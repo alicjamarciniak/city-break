@@ -1,6 +1,7 @@
 'use client';
 
 import useMediaQueries from '@/hooks/useMediaQueries';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 type GalleryPreviewProps = {
@@ -11,6 +12,7 @@ type GalleryPreviewProps = {
 const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
   const { isMdDevice } = useMediaQueries();
   const isMobile = isMdDevice();
+  const t = useTranslations('Common');
 
   const gridBases = [
     { col1: 100, col2: 0, col3: 0 },
@@ -81,7 +83,7 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
         }}
       >
         <small className="text-2xs lg:text-xs font-thin">
-          See full gallery ({length})
+          {t('seeFullGallery')} ({length})
         </small>
       </button>
     </div>

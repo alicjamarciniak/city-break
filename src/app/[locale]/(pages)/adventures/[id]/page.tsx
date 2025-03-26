@@ -4,6 +4,7 @@ import InstructorSection from './InstructorSection';
 import Map from './AddressSection';
 import { ImageGallery, OrderedList } from '@/components';
 import SchedulerSection from './SchedulerSection';
+import { getLocale } from 'next-intl/server';
 
 const getAdventures = async (): Promise<Adventure[]> => {
   const response = await fetch(
@@ -17,8 +18,10 @@ const getAdventures = async (): Promise<Adventure[]> => {
 };
 
 const getSingleAdventure = async (id: string): Promise<Adventure> => {
+  const locale = await getLocale();
+
   const response = await fetch(
-    `http://localhost:3000/api/contentful/entry?contentType=adventure&entryId=${id}`,
+    `http://localhost:3000/api/contentful/entry?locale=${locale}&contentType=adventure&entryId=${id}`,
     {
       method: 'GET',
     },
@@ -35,7 +38,11 @@ export async function generateStaticParams() {
   }));
 }
 
-const AuthorPage = async ({ params }: { params: Promise<{ id: number }> }) => {
+const AdventurePage = async ({
+  params,
+}: {
+  params: Promise<{ id: number }>;
+}) => {
   const { id } = await params;
   const adventure = await getSingleAdventure(id.toString());
 
@@ -86,5 +93,5 @@ const AuthorPage = async ({ params }: { params: Promise<{ id: number }> }) => {
   );
 };
 
-export default AuthorPage;
+export default AdventurePage;
 export const dynamicParams = false;

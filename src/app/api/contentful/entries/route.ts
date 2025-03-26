@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getLocale } from 'next-intl/server';
 import { contentfulClient } from '@/utils/contentful/contentfulClient';
 
 export async function GET(req: NextRequest): Promise<NextResponse<any>> {
   try {
     const { searchParams } = new URL(req.url);
     const contentType = searchParams.get('contentType');
+    const locale = searchParams.get('locale') || 'en';
 
     if (!contentType) {
       return NextResponse.json(
@@ -14,7 +14,6 @@ export async function GET(req: NextRequest): Promise<NextResponse<any>> {
       );
     }
 
-    const locale = await getLocale(); // Get dynamic locale
     const response = await contentfulClient.getEntries({
       content_type: contentType!,
       ...(locale !== 'en' && { locale }),

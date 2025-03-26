@@ -1,12 +1,11 @@
-// app/api/contentful/entry/route.ts
 import { NextResponse, NextRequest } from 'next/server';
-import { getLocale } from 'next-intl/server';
 import { contentfulClient } from '@/utils/contentful/contentfulClient';
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const entryId = searchParams.get('entryId');
+    const locale = searchParams.get('locale') || 'en';
 
     if (!entryId) {
       return NextResponse.json(
@@ -14,8 +13,6 @@ export async function GET(req: NextRequest) {
         { status: 400 },
       );
     }
-
-    const locale = await getLocale();
 
     const { sys, fields } = await contentfulClient.getEntry(entryId, {
       ...(locale !== 'en' && { locale }),

@@ -6,6 +6,7 @@ export type Instructor = {
     fallback: string;
     firstName: string;
     lastName: string;
+    helloMessage: string;
     avatar: {
       fields: {
         file: { url: string };

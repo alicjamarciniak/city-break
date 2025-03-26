@@ -13,6 +13,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import { useLocale } from 'next-intl';
+import { getDateLocale } from '@/i18n/dateLocaleMapper';
 
 export default function DatePickerWithRange({
   className,
@@ -21,6 +23,8 @@ export default function DatePickerWithRange({
     from: new Date(2022, 0, 20),
     to: addDays(new Date(2022, 0, 20), 20),
   });
+  const locale = useLocale();
+  const dateLocale = getDateLocale(locale);
 
   return (
     <div className={cn('grid gap-2', className)}>
@@ -38,8 +42,8 @@ export default function DatePickerWithRange({
             {date?.from ? (
               date.to ? (
                 <>
-                  {format(date.from, 'LLL dd, y')} -{' '}
-                  {format(date.to, 'LLL dd, y')}
+                  {format(date.from, 'LLL dd, y', { locale: dateLocale })} -{' '}
+                  {format(date.to, 'LLL dd, y', { locale: dateLocale })}
                 </>
               ) : (
                 format(date.from, 'LLL dd, y')

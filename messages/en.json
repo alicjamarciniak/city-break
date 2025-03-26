@@ -1,4 +1,13 @@
 {
+  "Adventure": {
+    "addressSectionTitle": "Where do we meet?",
+    "instructorSectionBtn": "Get to know me better",
+    "instructorSectionTitle": "Instructor",
+    "schedulerSectionCollapseText": "See available dates"
+  },
+  "Common": {
+    "seeFullGallery": "See full gallery"
+  },
   "Footer": {
     "copyrightText": "© City Breakers. All rights reserved",
     "linkAbout": "About",
@@ -52,14 +61,19 @@
       "title": "say about us"
     }
   },
+  "LanguageSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, pl {🇵🇱 Polish} en {🇬🇧 English} other {Unknown}}"
+  },
   "Nav": {
     "linkAbout": "About",
     "linkContact": "Contact",
     "linkHome": "Home",
     "linkServices": "Services"
   },
-  "LanguageSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, pl {🇵🇱 Polish} en {🇬🇧 English} other {Unknown}}"
+  "Scheduler": {
+    "start": "start",
+    "end": "end",
+    "joinBtn": "Join the group"
   }
 }

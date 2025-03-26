@@ -1,12 +1,12 @@
 import { type Testimonial } from '@/app/types/Testimonial';
-// import { fetchContentfulData } from '@/app/api/contentful/contentfulFetch';
 import Spline from '@splinetool/react-spline/next';
 import TestimonialSwiper from './TestimonialSwiper';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 const getTestimonials = async (): Promise<Testimonial[]> => {
+  const locale = await getLocale();
   const response = await fetch(
-    `http://localhost:3000/api/contentful/entries?contentType=testimonial`,
+    `http://localhost:3000/api/contentful/entries?locale=${locale}&contentType=testimonial`,
     {
       method: 'GET',
     },
@@ -17,7 +17,6 @@ const getTestimonials = async (): Promise<Testimonial[]> => {
 
 const TestimonialsSection = async () => {
   const t = await getTranslations('HomePage');
-  // const testimonials = await fetchContentfulData<Testimonial>('testimonial');
   const testimonials = await getTestimonials();
 
   return (

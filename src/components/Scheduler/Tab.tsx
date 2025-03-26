@@ -1,9 +1,10 @@
 import { TabsTrigger } from '@radix-ui/react-tabs';
 import { format } from 'date-fns';
-import { Button } from '../ui/button';
 
 import { type Group } from '.';
 import { PropsWithChildren } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { getDateLocale } from '@/i18n/dateLocaleMapper';
 
 type TabProps = PropsWithChildren<{
   group: Group;
@@ -11,6 +12,10 @@ type TabProps = PropsWithChildren<{
 }>;
 
 const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
+  const t = useTranslations('Scheduler');
+  const locale = useLocale();
+  const dateLocale = getDateLocale(locale);
+
   return (
     <TabsTrigger
       value={group.groupName}
@@ -23,7 +28,7 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
           <div className="text-2xl lg:text-5xl font-thin">
             {format(group.startDate, 'dd')}
             <span className="text-2xs lg:text-sm font-normal uppercase block">
-              {format(group.startDate, 'MMMM')}
+              {format(group.startDate, 'MMMM', { locale: dateLocale })}
             </span>
           </div>
 
@@ -33,7 +38,7 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
               <div className="text-2xl lg:text-5xl font-thin">
                 {format(group.endDate, 'dd')}
                 <span className="text-2xs lg:text-sm font-normal uppercase block">
-                  {format(group.endDate, 'MMMM')}
+                  {format(group.endDate, 'MMMM', { locale: dateLocale })}
                 </span>
               </div>
             </>
@@ -54,7 +59,7 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
              group-data-[state=inactive]:pointer-events-none"
             onClick={() => {}}
           >
-            Join the group
+            {t('joinBtn')}
           </div>
         </div>
       </div>

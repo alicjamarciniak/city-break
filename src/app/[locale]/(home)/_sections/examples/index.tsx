@@ -1,10 +1,12 @@
 import { type Adventure } from '@/app/types/Adventure';
 import ExampleSwiper from './ExampleSwiper';
+import { getLocale } from 'next-intl/server';
 
 const getAdventures = async (): Promise<Adventure[]> => {
   try {
+    const locale = await getLocale();
     const response = await fetch(
-      `http://localhost:3000/api/contentful/entries?contentType=adventure`,
+      `http://localhost:3000/api/contentful/entries?locale=${locale}&contentType=adventure`,
       { method: 'GET' },
     );
 
