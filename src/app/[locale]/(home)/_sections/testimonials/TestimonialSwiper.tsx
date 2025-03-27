@@ -15,8 +15,7 @@ type TestimonialSwiperProps = {
 };
 
 const TestimonialSwiper = ({ slides }: TestimonialSwiperProps) => {
-  const { isMdDevice } = useMediaQueries();
-  const isMobile = isMdDevice();
+  const { isMdDevice: isMobile } = useMediaQueries();
 
   return (
     <Swiper

@@ -19,8 +19,7 @@ type FullGalleryProps = {
 
 const FullGallery = ({ images, callback }: FullGalleryProps) => {
   const sliderRef = useRef<SwiperClass>();
-  const { isMdDevice } = useMediaQueries();
-  const isMobile = isMdDevice();
+  const { isMdDevice: isMobile } = useMediaQueries();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

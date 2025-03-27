@@ -11,8 +11,7 @@ import { useTranslations } from 'next-intl';
 
 const AuthorsSection = () => {
   const t = useTranslations('HomePage');
-  const { isMdDevice } = useMediaQueries();
-  const isMobile = isMdDevice();
+  const { isMdDevice: isMobile } = useMediaQueries();
   const iconSize = isMobile ? 16 : 25;
 
   const socialIcons = [

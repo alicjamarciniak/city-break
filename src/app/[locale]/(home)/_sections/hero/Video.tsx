@@ -8,16 +8,15 @@ const Video = () => {
   const [videoWidth, setVideoWidth] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const { isSmDevice, isLgDevice, isXlDevice } = useMediaQueries();
-  const isDesktop = isXlDevice();
-  const verticalRatio = isLgDevice() ? (isSmDevice() ? -0.3 : -0.34) : 0;
+  const { isSmDevice, isLgDevice, isXlDevice: isDesktop } = useMediaQueries();
+  const verticalRatio = isLgDevice ? (isSmDevice ? -0.3 : -0.34) : 0;
 
   useLayoutEffect(() => {
     if (!isDesktop) {
       setVideoWidth(videoRef.current?.getBoundingClientRect().width || 0);
     }
     setLoading(false);
-  }, []);
+  });
 
   return loading ? (
     <div>Loading...</div>

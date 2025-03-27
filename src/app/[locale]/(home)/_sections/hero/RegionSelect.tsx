@@ -23,25 +23,27 @@ const RegionSelect = async () => {
   const { regions } = await getRegions();
 
   return (
-    <div>
-      <Label className="px-3 text-xs font-semibold text-muted-foreground">
+    <div className="flex flex-col">
+      <Label className="px-3 text-xs font-semibold text-muted-foreground h-4">
         {t('hero.region')}
       </Label>
-      <Select>
-        <SelectTrigger className="w-[250px]">
-          <SelectValue placeholder={t('hero.regionPlaceholder')} />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectLabel>{t('hero.regionSelectLabel')}</SelectLabel>
-            {regions.map(({ label, value }) => (
-              <SelectItem key={label} value={label}>
-                {value}
-              </SelectItem>
-            ))}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+      <div className="h-12 flex items-center">
+        <Select>
+          <SelectTrigger className="w-[250px]">
+            <SelectValue placeholder={t('hero.regionPlaceholder')} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>{t('hero.regionSelectLabel')}</SelectLabel>
+              {regions.map(({ label, value }) => (
+                <SelectItem key={label} value={label}>
+                  {value}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 };

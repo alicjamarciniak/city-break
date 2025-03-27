@@ -6,7 +6,7 @@ import 'leaflet-defaulticon-compatibility';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { type LatLngTuple, type Marker as MarkerType, divIcon } from 'leaflet';
-import { RefAttributes, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useCoordinates from './useCoordinates';
 import useMediaQueries from '@/hooks/useMediaQueries';
 
@@ -40,8 +40,7 @@ const Map = ({ address, facilityName }: MapProps) => {
   const [position, setPosition] = useState<LatLngTuple>([0, 0]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { isMdDevice } = useMediaQueries();
-  const isMobile = isMdDevice();
+  const { isMdDevice: isMobile } = useMediaQueries();
 
   const markerRef = useRef<MarkerType>(null);
 

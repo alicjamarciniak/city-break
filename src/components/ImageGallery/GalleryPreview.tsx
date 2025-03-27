@@ -10,8 +10,7 @@ type GalleryPreviewProps = {
 };
 
 const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
-  const { isMdDevice } = useMediaQueries();
-  const isMobile = isMdDevice();
+  const { isMdDevice: isMobile } = useMediaQueries();
   const t = useTranslations('Common');
 
   const gridBases = [

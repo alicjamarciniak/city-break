@@ -23,8 +23,7 @@ const ProfileBox = ({
   socialIcons,
 }: ProfileBoxProps) => {
   const [iconsVisibility, setIconsVisibility] = useState(false);
-  const { isMdDevice } = useMediaQueries();
-  const isMobile = isMdDevice();
+  const { isMdDevice: isMobile } = useMediaQueries();
 
   return (
     <Link href={`/${profileUrl}`}>
