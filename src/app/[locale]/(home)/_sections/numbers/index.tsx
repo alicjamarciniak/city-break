@@ -3,6 +3,7 @@ import TestimonialGrid from '@/components/TestimonialGrid';
 import { RocketIcon, PersonIcon, HeartIcon } from '@radix-ui/react-icons';
 import { getLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import Reviews from './Reviews';
 
 const getReviews = async (): Promise<Review[]> => {
   const locale = await getLocale();
@@ -54,7 +55,10 @@ const NumbersSection = async () => {
         className={`bg-dark-background overflow-hidden relative max-h-[500px] flex justify-center py-12 px-6 lg:p-12`}
       >
         <div className="overflow-hidden bg-gradient-to-t from-dark-background to-40% to-transparent absolute z-10 top-0 left-0 right-0 bottom-0"></div>
-        <TestimonialGrid reviews={reviews} />
+
+        <Reviews>
+          <TestimonialGrid reviews={reviews} />
+        </Reviews>
 
         <div className="absolute flex justify-center bottom-0 z-20">
           <Link href="/opinions">{t('numbers.seeMore')}</Link>

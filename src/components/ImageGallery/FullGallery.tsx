@@ -39,15 +39,7 @@ const FullGallery = ({ images, callback }: FullGalleryProps) => {
       <div className="flex flex-1 flex-col">
         <div className="flex flex-row gap-2 px-10 lg:px-20 py-5 items-center">
           <DoubleArrowLeftIcon height={20} width={20} />
-          <button
-            onClick={() => {
-              callback();
-              // document.body.style.height = 'auto';
-              // document.body.style.overflowY = 'scroll';
-            }}
-          >
-            Go back
-          </button>
+          <button onClick={callback}>Go back</button>
         </div>
 
         <div className="flex flex-1">

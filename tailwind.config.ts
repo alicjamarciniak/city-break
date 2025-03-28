@@ -122,6 +122,9 @@ const config: Config = {
         '.text-2xs': {
           '@apply text-[0.55rem] leading-normal': '',
         },
+        '.no-scroll': {
+          '@apply h-[100vh] overflow-hidden': '',
+        },
       });
     }),
   ],

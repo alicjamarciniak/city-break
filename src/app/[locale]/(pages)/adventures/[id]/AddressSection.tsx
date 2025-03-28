@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { HomeIcon, SewingPinIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 const LazyMap = dynamic(() => import('@/utils/leaflet/Map'), {
   ssr: false,
@@ -29,7 +30,7 @@ const AddressSection = ({ address, facilityName }: AddressSectionProps) => {
           />
           {facilityName}
         </p>
-        <p className="">
+        <p>
           <SewingPinIcon
             height={20}
             width={20}
@@ -38,7 +39,14 @@ const AddressSection = ({ address, facilityName }: AddressSectionProps) => {
           {address}
         </p>
       </div>
-      <LazyMap address={address} facilityName={facilityName} />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+        viewport={{ once: true }}
+      >
+        <LazyMap address={address} facilityName={facilityName} />
+      </motion.div>
     </div>
   );
 };

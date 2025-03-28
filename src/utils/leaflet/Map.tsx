@@ -69,7 +69,7 @@ const Map = ({ address, facilityName }: MapProps) => {
           center={position}
           zoom={13}
           className="h-full w-full"
-          scrollWheelZoom={!isMobile}
+          scrollWheelZoom={false}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <Marker

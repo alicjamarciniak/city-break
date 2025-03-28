@@ -8,6 +8,7 @@ import {
   InstagramLogoIcon,
 } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 const AuthorsSection = () => {
   const t = useTranslations('HomePage');
@@ -22,15 +23,26 @@ const AuthorsSection = () => {
 
   return (
     <div className="bg-pink-background px-6 lg:px-20 py-32 flex flex-col lg:flex-row justify-evenly">
-      <div>
-        <h4 className="text-2xl lg:mt-8 font-thin mb-10">
-          <span className="font-oswald text-8xl font-bold uppercase block">
+      <motion.div
+        initial={{ opacity: 0, x: -300 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
+        viewport={{ once: false }}
+      >
+        <h4 className="text-2xl lg:text-4xl lg:mt-8 font-thin mb-10">
+          <span className="font-oswald text-8xl font-bold uppercase block lg:scale-y-[3] lg:scale-x-[1.5] lg:mt-[60px] lg:mb-[90px] lg:ml-[74px]">
             {t('authors.title')}
           </span>
           {t('authors.subtitle')}
         </h4>
-      </div>
-      <div className="flex flex-row gap-6 lg:gap-16">
+      </motion.div>
+      <motion.div
+        className="flex flex-row gap-6 lg:gap-16"
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
+        viewport={{ once: false }}
+      >
         <div className="w-[150px] lg:w-[300px]">
           <ProfileBox
             profileUrl="mira-kowalska"
@@ -51,7 +63,7 @@ const AuthorsSection = () => {
             socialIcons={socialIcons}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

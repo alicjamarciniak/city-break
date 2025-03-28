@@ -84,7 +84,7 @@ const AdventurePage = async ({
 
         <div
           className="flex flex-col overflow-x-hidden fixed right-0 left-0 bottom-0
-        lg:left-auto lg:right-auto lg:bottom-auto lg:basis-1/2 lg:sticky lg:top-[85px] h-min z-[100]"
+        lg:left-auto lg:right-auto lg:bottom-auto lg:basis-1/2 lg:sticky lg:top-[85px] h-min z-[100] lg:z-[35]"
         >
           <SchedulerSection adventure={adventure} />
         </div>

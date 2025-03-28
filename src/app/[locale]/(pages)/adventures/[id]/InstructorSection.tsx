@@ -1,8 +1,11 @@
+'use client';
+
 import { Instructor } from '@/app/types/Adventure';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { DoubleArrowRightIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 type InstructorSectionProps = {
   instructor: Instructor;
@@ -14,7 +17,12 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
   const t = useTranslations('Adventure');
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      viewport={{ once: true }}
+    >
       <Card
         className={`flex bg-swamp-background/10 border-transparent lg:border-yukon-background/50 text-dark-foreground 
         mb-2 mt-3 lg:mt-10 p-0 lg:p-10 rounded-tr-[50px] lg:rounded-tr-xl`}
@@ -53,7 +61,7 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
           </div>
         </div>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 
