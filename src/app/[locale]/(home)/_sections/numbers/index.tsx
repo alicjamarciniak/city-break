@@ -4,6 +4,7 @@ import { RocketIcon, PersonIcon, HeartIcon } from '@radix-ui/react-icons';
 import { getLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import Reviews from './Reviews';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 const getReviews = async (): Promise<Review[]> => {
   const locale = await getLocale();
@@ -27,25 +28,34 @@ const NumbersSection = async () => {
         <h4 className="text-xl mt-8 mb-2">{t('numbers.subtitle')}</h4>
         <h3 className="text-lg ">
           {t('numbers.titleStart')}
-          <span className="text-3xl font-bold px-2"> 2 500+ </span>
+
+          <span className="text-4xl font-bold px-3 text-special-light">
+            <AnimatedCounter to={2500} />+
+          </span>
           {t('numbers.titleEnd')}
         </h3>
         <div className="justify-center gap-3 lg:gap-20 pt-14 flex">
           <div className="w-[200px] flex justify-start lg:justify-center items-center flex-col gap-1 p-0 lg:p-5">
-            <PersonIcon width={40} height={40} />
-            <div className="text-2xl font-extrabold">1 800+</div>
+            <PersonIcon width={40} height={40} className="text-special-light" />
+            <div className="text-2xl font-extrabold">
+              <AnimatedCounter to={1800} />+
+            </div>
             <div className="text-sm font-bold">{t('numbers.happyClients')}</div>
           </div>
           <div className="w-[200px] flex justify-start lg:justify-center items-center flex-col gap-1 p-0 lg:p-5">
-            <RocketIcon height={40} width={40} />
-            <div className="text-2xl font-extrabold">147</div>
+            <RocketIcon height={40} width={40} className="text-special-light" />
+            <div className="text-2xl font-extrabold">
+              <AnimatedCounter to={147} />
+            </div>
             <div className="text-sm font-bold">
               {t('numbers.adventurePrograms')}
             </div>
           </div>
           <div className="w-[200px] flex justify-start lg:justify-center items-center flex-col gap-1 p-0 lg:p-5">
-            <HeartIcon width={40} height={40} />
-            <div className="text-2xl font-extrabold">17 480</div>
+            <HeartIcon width={40} height={40} className="text-special-light" />
+            <div className="text-2xl font-extrabold">
+              <AnimatedCounter to={17480} />
+            </div>
             <div className="text-sm font-bold">{t('numbers.hoursOfJoy')}</div>
           </div>
         </div>
