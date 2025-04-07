@@ -28,6 +28,7 @@ const ProfileBox = ({
   return (
     <Link href={`/${profileUrl}`}>
       <div
+        data-testid="profile-container"
         onMouseEnter={() => setIconsVisibility(true)}
         onMouseLeave={() => setIconsVisibility(false)}
         className="relative flex flex-col h-[260px] lg:h-[400px]"
@@ -48,7 +49,9 @@ const ProfileBox = ({
         <div className="w-full bg-white">
           <div className="p-3 lg:p-5">
             <h6 className="font-thin text-lg lg:text-3xl">
-              <span className="font-bold mr-2">{firstName}</span>
+              <span data-testid="first-name" className="font-bold mr-2">
+                {firstName}
+              </span>
               {lastName}
             </h6>
             <p className="font-thin text-gray-600 text-xs lg:text-base">
@@ -58,6 +61,7 @@ const ProfileBox = ({
           <div className={`flex overflow-hidden`}>
             {socialIcons?.map((icon, i) => (
               <div
+                data-testid={`icon-${i}`}
                 key={`icon-${i}`}
                 className={`flex basis-1/3 justify-center
               ${iconsVisibility || isMobile ? 'max-h-[60px] p-2 lg:p-4' : 'max-h-0'}

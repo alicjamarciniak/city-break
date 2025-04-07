@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import { Locale } from 'next-intl';
-import { ChangeEvent, FormEventHandler, ReactNode, useTransition } from 'react';
+import { ReactNode, useTransition } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import {
   Select,

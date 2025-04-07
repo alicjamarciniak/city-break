@@ -76,12 +76,16 @@ const FullGallery = ({ images, callback }: FullGalleryProps) => {
           {!isMobile && images.length > 1 && (
             <>
               <ChevronRightCircle
+                role="button"
                 className="absolute top-[60%] lg:top-1/2 right-10 lg:right-20 z-10"
                 size={30}
+                aria-label="Next image"
                 onClick={() => sliderRef.current?.slideNext()}
               />
               <ChevronLeftCircle
+                role="button"
                 className="absolute top-[60%] lg:top-1/2 left-10 lg:left-20 z-10"
+                aria-label="Prev image"
                 size={30}
                 onClick={() => sliderRef.current?.slidePrev()}
               />

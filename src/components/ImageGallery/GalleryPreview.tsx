@@ -19,8 +19,8 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
     { col1: 50, col2: 50, col3: 0 },
     { col1: 40, col2: 30, col3: 30 },
   ];
-  const length = images.length;
-  const { col1, col2, col3 } = gridBases[length - 1];
+  const previewCount = images.length > 4 ? 4 : images.length;
+  const { col1, col2, col3 } = gridBases[previewCount - 1];
 
   return (
     <div className={`h-full w-full min-w-100 flex gap-3 relative`}>
@@ -36,7 +36,7 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
         />
       </div>
 
-      {!isMobile && length > 2 && (
+      {!isMobile && previewCount > 2 && (
         <div
           className={`flex flex-col gap-3`}
           style={{ flexBasis: `${col2}%` }}
@@ -59,15 +59,15 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
           </div>
         </div>
       )}
-      {!isMobile && length !== 1 && length !== 3 && (
+      {!isMobile && previewCount !== 1 && previewCount !== 3 && (
         <div
           className={`flex relative rounded-md overflow-hidden`}
           style={{ flexBasis: `${col3}%` }}
         >
           <Image
-            alt={images[3].alt || images[2].alt}
+            alt={images[3]?.alt || images[2]?.alt}
             fill
-            src={`https:${images[3].src || images[2].src}`}
+            src={`https:${images[3]?.src || images[2]?.src}`}
             style={{ objectFit: 'cover' }}
           />
         </div>
@@ -75,14 +75,10 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
 
       <button
         className="absolute flex bottom-5 right-5 bg-white px-4 py-2 rounded-full shadow-lg"
-        onClick={() => {
-          callback();
-          // document.body.style.height = '100vh';
-          // document.body.style.overflowY = 'hidden';
-        }}
+        onClick={callback}
       >
         <small className="text-2xs lg:text-xs font-thin">
-          {t('seeFullGallery')} ({length})
+          {t('seeFullGallery')} ({images.length})
         </small>
       </button>
     </div>
