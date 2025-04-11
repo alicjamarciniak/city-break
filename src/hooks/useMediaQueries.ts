@@ -1,18 +1,32 @@
-import { useMediaQuery } from 'react-responsive';
+import { useEffect, useState } from 'react';
 
 const useMediaQueries = () => {
-  /* 640px */
-  const isSmDevice = useMediaQuery({ query: '(max-width: 40rem)' });
-  /* 768px */
-  const isMdDevice = useMediaQuery({ query: '(max-width: 48rem)' });
-  /* 1024px */
-  const isLgDevice = useMediaQuery({ query: '(max-width: 64rem)' });
-  /* 1280px */
-  const isXlDevice = useMediaQuery({ query: '(max-width: 80rem)' });
-  /* 1536px */
-  const is2XlDevice = useMediaQuery({ query: '(max-width: 96rem)' });
+  const [media, setMedia] = useState({
+    isSmDevice: false,
+    isMdDevice: false,
+    isLgDevice: false,
+    isXlDevice: false,
+    is2XlDevice: false,
+  });
 
-  return { isSmDevice, isMdDevice, isLgDevice, isXlDevice, is2XlDevice };
+  useEffect(() => {
+    const update = () => {
+      setMedia({
+        isSmDevice: window.matchMedia('(max-width: 40rem)').matches,
+        isMdDevice: window.matchMedia('(max-width: 48rem)').matches,
+        isLgDevice: window.matchMedia('(max-width: 64rem)').matches,
+        isXlDevice: window.matchMedia('(max-width: 80rem)').matches,
+        is2XlDevice: window.matchMedia('(max-width: 96rem)').matches,
+      });
+    };
+
+    update();
+
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  return media;
 };
 
 export default useMediaQueries;
