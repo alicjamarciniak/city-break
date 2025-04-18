@@ -19,7 +19,7 @@ type SchedulerSectionProps = {
 const SchedulerSection = ({ adventure }: SchedulerSectionProps) => {
   const t = useTranslations('Adventure');
   const [open, setOpen] = useState(false);
-  const { isMdDevice: isMobile } = useMediaQueries();
+  const { isSmDevice: isMobile } = useMediaQueries();
 
   if (isMobile === null) return;
 

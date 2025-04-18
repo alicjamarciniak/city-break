@@ -13,7 +13,7 @@ const HeroSection = () => {
         <Video />
 
         <div className="flex flex-col justify-center relative z-10">
-          <div className="pt-[20vh] lg:pt-[14vh] text-center text-white">
+          <div className="pt-[20vh] md:pt-[28vh] lg:pt-[14vh] text-center text-white">
             <h1 className="font-thin text-xl lg:text-4xl">
               {t('hero.subtitle')}
               <span className="animate-slideUp font-bold font-miguel text-primary block mt-4 mb-6 [text-shadow:_6px_6px_6px_rgba(0,0,0,0.4)] text-[3.5rem] leading-[1] lg:text-8xl tracking-[3px]">

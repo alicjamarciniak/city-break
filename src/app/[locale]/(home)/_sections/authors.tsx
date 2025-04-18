@@ -22,7 +22,7 @@ const AuthorsSection = () => {
   ];
 
   return (
-    <div className="bg-pink-background px-6 lg:px-20 py-32 flex flex-col lg:flex-row justify-evenly overflow-x-hidden">
+    <div className="bg-pink-background px-6 lg:px-20 py-32 flex flex-col md:flex-row justify-evenly overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, x: -300 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -30,7 +30,11 @@ const AuthorsSection = () => {
         viewport={{ once: false }}
       >
         <h4 className="text-2xl lg:text-4xl lg:mt-8 font-thin mb-10">
-          <span className="font-oswald text-8xl font-bold uppercase block lg:scale-y-[3] lg:scale-x-[1.5] lg:mt-[60px] lg:mb-[90px] lg:ml-[74px]">
+          <span
+            className="font-oswald text-8xl font-bold uppercase block 
+          md:scale-y-[1.5] md:scale-x-[1] md:mt-[10px] md:mb-[25px] md:ml-[-5px]
+          lg:scale-y-[3] lg:scale-x-[1.5] lg:mt-[60px] lg:mb-[90px] lg:ml-[74px]"
+          >
             {t('authors.title')}
           </span>
           {t('authors.subtitle')}

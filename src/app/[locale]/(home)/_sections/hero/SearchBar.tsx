@@ -16,6 +16,8 @@ const SearchBar = ({ children }: PropsWithChildren) => {
   const t = useTranslations('HomePage');
   const { isMdDevice: isMobile } = useMediaQueries();
 
+  if (isMobile === null) return;
+
   return isMobile ? (
     <div className="mt-5 flex justify-center">
       <Button

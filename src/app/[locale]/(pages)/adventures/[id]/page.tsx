@@ -57,19 +57,19 @@ const AdventurePage = async ({ params }: { params: { id: number } }) => {
 
   return (
     <div>
-      <div className="h-[200px] lg:h-[500px] mb-8">
+      <div className="h-[200px] md:h-[350px] lg:h-[500px] mb-8">
         <ImageGallery images={images} />
       </div>
 
       <div className="mb-5">
-        <h4 className="text-lg lg:text-3xl">{adventure.name}</h4>
-        <small className="text-xs lg:text-sm underline text-yukon-background/70">
+        <h4 className="text-lg lg:text-3xl md:text-2xl">{adventure.name}</h4>
+        <small className="text-xs md:text-sm underline text-yukon-background/70">
           {adventure.city} ({adventure.region})
         </small>
       </div>
 
       <div className="flex flex-row gap-12 b-6">
-        <div className="font-thin text-justify flex flex-col lg:basis-1/2 overflow-x-hidden">
+        <div className="font-thin text-justify flex flex-col md:basis-1/2 overflow-x-hidden">
           <OrderedList>
             <RichText document={adventure.fullDescription} />
           </OrderedList>
@@ -84,7 +84,7 @@ const AdventurePage = async ({ params }: { params: { id: number } }) => {
 
         <div
           className="flex flex-col overflow-x-hidden fixed right-0 left-0 bottom-0
-        lg:left-auto lg:right-auto lg:bottom-auto lg:basis-1/2 lg:sticky lg:top-[85px] h-min z-[100] lg:z-[35]"
+        md:left-auto md:right-auto md:bottom-auto md:basis-1/2 md:sticky md:top-[85px] h-min z-[100] md:z-[35]"
         >
           <SchedulerSection adventure={adventure} />
         </div>

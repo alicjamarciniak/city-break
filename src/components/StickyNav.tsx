@@ -30,9 +30,9 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
       )}
 
       <nav
-        className={`lg:fixed top-0 h-[60px] m-0 ${isMenuOpen ? 'fixed bg-white w-[70vw] z-[999]' : 'absolute bg-transparent w-full z-[40]'}`}
+        className={`md:fixed top-0 h-[60px] m-0 ${isMenuOpen ? 'fixed bg-white w-[70vw] z-[999]' : 'absolute bg-transparent w-full z-[40]'}`}
       >
-        <div className="mx-auto px-6 lg:px-24 lg:bg-white">
+        <div className="mx-auto px-6 lg:px-24 md:px-10 md:bg-white">
           <div className="flex justify-between items-center h-[60px] relative">
             {/* Left side navigation links (hidden on mobile) */}
             <div className="hidden md:flex items-center space-x-4">
@@ -50,11 +50,11 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
 
             {/* Logo (centered on desktop, left-aligned on mobile) */}
             <div
-              className={`${isMenuOpen && 'hidden'} flex-shrink-0 flex items-center p-2 lg:bg-white rounded-full absolute top-0 left-0 right-0 w-[96px] mx-auto`}
+              className={`${isMenuOpen && 'hidden'} flex-shrink-0 flex items-center p-2 md:bg-white rounded-full absolute top-0 left-0 right-0 w-[96px] mx-auto`}
             >
               <Link href="/" className="font-bold text-xl text-gray-900">
                 <Image
-                  className={`${isHomepage ? 'invert' : 'filter-none'} lg:filter-none w-16 h-16 lg:w-auto lg:h-auto`}
+                  className={`${isHomepage ? 'invert' : 'filter-none'} md:filter-none w-16 h-16 md:w-auto md:h-auto`}
                   alt="logo"
                   src="/images/logo.png"
                   width={80}
