@@ -6,12 +6,12 @@ import Image from 'next/image';
 import { DoubleArrowRightIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { handleWIPLinks } from '@/utils/sonner/toast';
 
 type InstructorSectionProps = {
   instructor: Instructor;
 };
-
-// TODO: ADD CATEGORY, LANGUAGES, WELCOME MSG, LONG DESC TO INSTRUCTORS
 
 const InstructorSection = ({ instructor }: InstructorSectionProps) => {
   const t = useTranslations('Adventure');
@@ -53,10 +53,14 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
                 {instructor.fields.helloMessage}
               </p>
 
-              <div className="text-yukon-background mt-3 flex items-center gap-2">
+              <Link
+                href=""
+                className="text-yukon-background mt-3 flex items-center gap-2"
+                onClick={handleWIPLinks}
+              >
                 {t('instructorSectionBtn')}
                 <DoubleArrowRightIcon />
-              </div>
+              </Link>
             </CardContent>
           </div>
         </div>

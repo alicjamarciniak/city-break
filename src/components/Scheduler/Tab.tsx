@@ -5,6 +5,7 @@ import { type Group } from '.';
 import { PropsWithChildren } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { getDateLocale } from '@/i18n/dateLocaleMapper';
+import { showWIPToast } from '@/utils/sonner/toast';
 
 type TabProps = PropsWithChildren<{
   group: Group;
@@ -57,7 +58,7 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
             bottom-3 bg-gradient-to-br from-white/20 from-20% to-white/10 transition-all
              hover:font-semibold hover:bottom-4 hover:shadow-md hover:shadow-white/60
              group-data-[state=inactive]:pointer-events-none"
-            onClick={() => {}}
+            onClick={showWIPToast}
           >
             {t('joinBtn')}
           </div>

@@ -5,6 +5,8 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import Reviews from './Reviews';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import { handleWIPLinks } from '@/utils/sonner/toast';
+import SeeMoreBtn from './SeeMoreBtn';
 
 const getReviews = async (): Promise<Review[]> => {
   const locale = await getLocale();
@@ -71,7 +73,7 @@ const NumbersSection = async () => {
         </Reviews>
 
         <div className="absolute flex justify-center bottom-0 z-20">
-          <Link href="/opinions">{t('numbers.seeMore')}</Link>
+          <SeeMoreBtn text={t('numbers.seeMore')} />
         </div>
       </div>
     </div>

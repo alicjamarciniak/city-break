@@ -1,6 +1,7 @@
 'use client';
 
 import useMediaQueries from '@/hooks/useMediaQueries';
+import { handleWIPLinks } from '@/utils/sonner/toast';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -26,7 +27,7 @@ const ProfileBox = ({
   const { isMdDevice: isMobile } = useMediaQueries();
 
   return (
-    <Link href={`/${profileUrl}`}>
+    <Link href={`/${profileUrl}`} onClick={handleWIPLinks}>
       <div
         data-testid="profile-container"
         onMouseEnter={() => setIconsVisibility(true)}

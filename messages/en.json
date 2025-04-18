@@ -6,7 +6,9 @@
     "schedulerSectionCollapseText": "See available dates"
   },
   "Common": {
-    "seeFullGallery": "See full gallery"
+    "seeFullGallery": "See full gallery",
+    "WIPText1": "Oops, work in progress!",
+    "WIPText2": "Sorry, this feature isn't ready yet."
   },
   "Footer": {
     "copyrightText": "© City Breakers. All rights reserved",

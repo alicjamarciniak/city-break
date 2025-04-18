@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
+import { handleWIPLinks } from '@/utils/sonner/toast';
 
 type StickyNavProps = {
   isHomepage?: boolean;
@@ -38,7 +39,11 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
               <Link href="/" className="text-gray-700 hover:text-gray-900">
                 {t('linkHome')}
               </Link>
-              <Link href="/about" className="text-gray-700 hover:text-gray-900">
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-gray-900"
+                onClick={handleWIPLinks}
+              >
                 {t('linkAbout')}
               </Link>
             </div>
@@ -64,12 +69,14 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
               <Link
                 href="/services"
                 className="text-gray-700 hover:text-gray-900"
+                onClick={handleWIPLinks}
               >
                 {t('linkServices')}
               </Link>
               <Link
                 href="/contact"
                 className="text-gray-700 hover:text-gray-900"
+                onClick={handleWIPLinks}
               >
                 {t('linkContact')}
               </Link>
@@ -103,20 +110,23 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
                 {t('linkHome')}
               </Link>
               <Link
-                href="#"
+                href="/about"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                onClick={handleWIPLinks}
               >
                 {t('linkAbout')}
               </Link>
               <Link
-                href="#"
+                href="/services"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                onClick={handleWIPLinks}
               >
                 {t('linkServices')}
               </Link>
               <Link
-                href="#"
+                href="/contact"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                onClick={handleWIPLinks}
               >
                 {t('linkContact')}
               </Link>

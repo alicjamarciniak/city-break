@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button';
 import Video from './Video';
 import SearchBar from './SearchBar';
 import RegionSelect from './RegionSelect';
 import { useTranslations } from 'next-intl';
+import ExploreBtn from './ExploreBtn';
 
 const HeroSection = () => {
   const t = useTranslations('HomePage');
@@ -25,12 +25,7 @@ const HeroSection = () => {
               <br />
               <span className="hidden lg:inline">{t('hero.description2')}</span>
             </p>
-            <Button
-              className="mt-20 lg:mt-10 rounded-full py-5 px-20 drop-shadow-md uppercase"
-              variant="special"
-            >
-              {t('hero.exploreBtn')}
-            </Button>
+            <ExploreBtn text={t('hero.exploreBtn')} />
           </div>
 
           <SearchBar>

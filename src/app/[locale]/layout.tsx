@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { NextIntlClientProvider, Locale, hasLocale } from 'next-intl';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -8,6 +8,7 @@ import './globals.css';
 import { Roboto, Oswald } from 'next/font/google';
 
 import { Footer } from '@/components';
+import { Toaster } from 'sonner';
 
 const robotoFont = Roboto({
   weight: ['300', '500', '700'],
@@ -61,7 +62,9 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${miguelDeNorthernFont.variable} ${robotoFont.variable} ${oswaldFont.variable} antialiased`}
       >
         <NextIntlClientProvider>
-          <div className="flex flex-col min-h-[100vh] relative ">
+          <Toaster position="top-right" closeButton />
+
+          <div className="flex flex-col min-h-[100vh] relative">
             {children}
             <Footer />
           </div>

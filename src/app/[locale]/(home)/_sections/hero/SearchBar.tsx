@@ -10,6 +10,7 @@ import { PropsWithChildren } from 'react';
 import { AvatarIcon } from '@radix-ui/react-icons';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
+import { showWIPToast } from '@/utils/sonner/toast';
 
 const SearchBar = ({ children }: PropsWithChildren) => {
   const t = useTranslations('HomePage');
@@ -20,6 +21,7 @@ const SearchBar = ({ children }: PropsWithChildren) => {
       <Button
         variant="secondary"
         className="text-black rounded-full py-5 px-20 drop-shadow-md"
+        onClick={showWIPToast}
       >
         <MagnifyingGlassIcon height={18} width={18} className="mr-2" />{' '}
         {t('hero.search')}
@@ -55,7 +57,11 @@ const SearchBar = ({ children }: PropsWithChildren) => {
       </div>
       <Separator className="m-1" orientation="vertical" />
       <div className="flex self-center flex-grow justify-end items-end ">
-        <Button className="flex-1 lg:mr-3" variant="default">
+        <Button
+          className="flex-1 lg:mr-3"
+          variant="default"
+          onClick={showWIPToast}
+        >
           {t('hero.search')}
         </Button>
       </div>

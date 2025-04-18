@@ -11,6 +11,7 @@ import {
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useTranslations } from 'next-intl';
+import { handleWIPLinks, showWIPToast } from '@/utils/sonner/toast';
 
 const Footer = () => {
   const t = useTranslations('Footer');
@@ -41,9 +42,15 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-2 mt-5 lg:font-thin">
             <Link href="/">{t('linkHome')}</Link>
-            <Link href="/about">{t('linkAbout')}</Link>
-            <Link href="/services">{t('linkServices')}</Link>
-            <Link href="/contact">{t('linkContact')}</Link>
+            <Link href="/about" onClick={handleWIPLinks}>
+              {t('linkAbout')}
+            </Link>
+            <Link href="/services" onClick={handleWIPLinks}>
+              {t('linkServices')}
+            </Link>
+            <Link href="/contact" onClick={handleWIPLinks}>
+              {t('linkContact')}
+            </Link>
           </div>
         </div>
 
@@ -74,6 +81,7 @@ const Footer = () => {
             <Button
               className="rounded-full py-5 px-5 lg:w-min lg:px-16 drop-shadow-md !bg-yukon-background"
               variant="default"
+              onClick={showWIPToast}
             >
               {t('newsletterBtn')}
             </Button>
@@ -100,9 +108,9 @@ const Footer = () => {
       text-sm justify-between items-center flex-wrap"
       >
         <div className="flex gap-4 basis-1/4 order-1">
-          <TwitterLogoIcon width={25} height={25} />
-          <LinkedInLogoIcon width={25} height={25} />
-          <InstagramLogoIcon width={25} height={25} />
+          <TwitterLogoIcon width={25} height={25} onClick={showWIPToast} />
+          <LinkedInLogoIcon width={25} height={25} onClick={showWIPToast} />
+          <InstagramLogoIcon width={25} height={25} onClick={showWIPToast} />
         </div>
 
         <div
@@ -113,9 +121,13 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-4 lg:basis-1/4 lg:w-auto lg:justify-end order-2 lg:order-3">
-          <Link href="/terms-of-service">{t('linkTermsOfService')}</Link>
+          <Link href="/terms-of-service" onClick={handleWIPLinks}>
+            {t('linkTermsOfService')}
+          </Link>
           <div>|</div>
-          <Link href="/privacy-policy">{t('linkPrivacyPolicy')}</Link>
+          <Link href="/privacy-policy" onClick={handleWIPLinks}>
+            {t('linkPrivacyPolicy')}
+          </Link>
         </div>
       </div>
     </div>

@@ -6,7 +6,9 @@
     "schedulerSectionCollapseText": "Zobacz dostępne terminy"
   },
   "Common": {
-    "seeFullGallery": "Zobacz galerię"
+    "seeFullGallery": "Zobacz galerię",
+    "WIPText1": "Uups, jeszcze pracujemy nad tym!",
+    "WIPText2": "Przykro nam, ale póki co ta funkcja nie jest gotowa."
   },
   "Footer": {
     "copyrightText": "© City Breakers. Wszelkie prawa zastrzeżone",
