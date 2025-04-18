@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 const useMediaQueries = () => {
-  const [media, setMedia] = useState({
-    isSmDevice: false,
-    isMdDevice: false,
-    isLgDevice: false,
-    isXlDevice: false,
-    is2XlDevice: false,
+  const [media, setMedia] = useState<Record<string, boolean | null>>({
+    isSmDevice: null,
+    isMdDevice: null,
+    isLgDevice: null,
+    isXlDevice: null,
+    is2XlDevice: null,
   });
 
   useEffect(() => {

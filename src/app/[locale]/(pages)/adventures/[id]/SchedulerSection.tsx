@@ -21,6 +21,8 @@ const SchedulerSection = ({ adventure }: SchedulerSectionProps) => {
   const [open, setOpen] = useState(false);
   const { isMdDevice: isMobile } = useMediaQueries();
 
+  if (isMobile === null) return;
+
   return isMobile ? (
     <div className="pt-[50px]">
       <div className="bg-white border-gray-200 border-t shadow-[0px_-6px_40px_-12px_rgba(220,220,220,1)] relative">
