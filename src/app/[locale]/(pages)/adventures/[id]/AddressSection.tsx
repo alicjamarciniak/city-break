@@ -4,10 +4,11 @@ import dynamic from 'next/dynamic';
 import { HomeIcon, SewingPinIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const LazyMap = dynamic(() => import('@/utils/leaflet/Map'), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
+  loading: () => <Skeleton className="w-full h-full rounded-md" />,
 });
 
 type AddressSectionProps = {

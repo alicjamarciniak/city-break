@@ -2,10 +2,8 @@ import { type Review } from '@/app/types/Review';
 import TestimonialGrid from '@/components/TestimonialGrid';
 import { RocketIcon, PersonIcon, HeartIcon } from '@radix-ui/react-icons';
 import { getLocale, getTranslations } from 'next-intl/server';
-import Link from 'next/link';
 import Reviews from './Reviews';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import { handleWIPLinks } from '@/utils/sonner/toast';
 import SeeMoreBtn from './SeeMoreBtn';
 
 const getReviews = async (): Promise<Review[]> => {
