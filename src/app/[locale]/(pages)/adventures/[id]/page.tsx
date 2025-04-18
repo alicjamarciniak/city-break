@@ -31,18 +31,18 @@ const getSingleAdventure = async (id: string): Promise<Adventure> => {
 };
 
 export async function generateStaticParams() {
+  const locales = ['en', 'pl'];
   const posts = await getAdventures();
 
-  return posts.map((post) => ({
-    id: post.id.toString(),
-  }));
+  return locales.flatMap((locale) =>
+    posts.map((post) => ({
+      locale,
+      id: post.id.toString(),
+    })),
+  );
 }
 
-const AdventurePage = async ({
-  params,
-}: {
-  params: Promise<{ id: number }>;
-}) => {
+const AdventurePage = async ({ params }: { params: { id: number } }) => {
   const { id } = await params;
   const adventure = await getSingleAdventure(id.toString());
 

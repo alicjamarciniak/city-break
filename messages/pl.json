@@ -73,6 +73,14 @@
     "linkHome": "Strona główna",
     "linkServices": "Usługi"
   },
+  "NotFound": {
+    "homeBtn": "Strona główna",
+    "reportBtn": "Zgłoś błąd",
+    "subtitleText1": "Przykro nam, ale strona o podanym adresie nie istnieje.",
+    "subtitleText2": "Sprawdź czy dobrze wpisałeś adres strony, a w przypadku błędu możesz zgłosić go przyciskiem poniżej.",
+    "titleText1": "Uups!",
+    "titleText2": "Strona nieznaleziona"
+  },
   "Scheduler": {
     "start": "start",
     "end": "koniec",

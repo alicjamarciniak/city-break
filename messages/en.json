@@ -73,6 +73,14 @@
     "linkHome": "Home",
     "linkServices": "Services"
   },
+  "NotFound": {
+    "homeBtn": "Return home",
+    "reportBtn": "Report issue",
+    "subtitleText1": "Sorry, but it seems like the page you're looking for doesn't exist.",
+    "subtitleText2": "Double-check the URL — and if something seems off, let us know with the button below.",
+    "titleText1": "Ooops!",
+    "titleText2": "Page not found"
+  },
   "Scheduler": {
     "start": "start",
     "end": "end",
