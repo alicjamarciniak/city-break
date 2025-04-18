@@ -22,7 +22,7 @@ const AuthorsSection = () => {
   ];
 
   return (
-    <div className="bg-pink-background px-6 lg:px-20 py-32 flex flex-col lg:flex-row justify-evenly">
+    <div className="bg-pink-background px-6 lg:px-20 py-32 flex flex-col lg:flex-row justify-evenly overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, x: -300 }}
         whileInView={{ opacity: 1, x: 0 }}

@@ -6,9 +6,14 @@
     "schedulerSectionCollapseText": "Zobacz dostępne terminy"
   },
   "Common": {
+    "acceptAll": "Zgoda na wszystkie",
+    "cookieText1": "Używamy ciasteczek, dzięki którym nasza strona jest bardziej przyjazna i niezawodna. Przechodząc dalej wyrażasz zgodę na ich zapis.",
+    "cookieText2": "Szczegóły znajdziesz w naszej",
+    "decline": "Odmawiam",
     "seeFullGallery": "Zobacz galerię",
     "WIPText1": "Uups, jeszcze pracujemy nad tym!",
-    "WIPText2": "Przykro nam, ale póki co ta funkcja nie jest gotowa."
+    "WIPText2": "Przykro nam, ale póki co ta funkcja nie jest gotowa.",
+    "linkPrivacyPolicy": "Polityce prywatności."
   },
   "Footer": {
     "copyrightText": "© City Breakers. Wszelkie prawa zastrzeżone",

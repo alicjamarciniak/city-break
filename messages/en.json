@@ -6,9 +6,14 @@
     "schedulerSectionCollapseText": "See available dates"
   },
   "Common": {
+    "acceptAll": "Accept all",
+    "decline": "Decline",
+    "cookieText1": "This website uses cookies to enhance your experience. By using our website, you consent to the use of cookies.",
+    "cookieText2": "You can read more in our",
     "seeFullGallery": "See full gallery",
     "WIPText1": "Oops, work in progress!",
-    "WIPText2": "Sorry, this feature isn't ready yet."
+    "WIPText2": "Sorry, this feature isn't ready yet.",
+    "linkPrivacyPolicy": "Privacy Policy."
   },
   "Footer": {
     "copyrightText": "© City Breakers. All rights reserved",

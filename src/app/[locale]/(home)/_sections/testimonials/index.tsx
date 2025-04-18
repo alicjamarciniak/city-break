@@ -20,8 +20,8 @@ const TestimonialsSection = async () => {
   const testimonials = await getTestimonials();
 
   return (
-    <>
-      <div className="flex h-[100vh] lg:h-max bg-gradient-to-b from-dark-background to-black relative">
+    <div>
+      <div className="flex h-[100vh] lg:h-auto bg-gradient-to-b from-dark-background to-black relative">
         <div className="hidden lg:flex py-10">
           <div className="flex-[1]"></div>
           <div className="flex-[3] overflow-hidden">
@@ -45,7 +45,7 @@ const TestimonialsSection = async () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

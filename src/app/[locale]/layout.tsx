@@ -9,6 +9,7 @@ import { Roboto, Oswald } from 'next/font/google';
 
 import { Footer } from '@/components';
 import { Toaster } from 'sonner';
+import CookieConsentBanner from '@/components/CookieConsentBanner';
 
 const robotoFont = Roboto({
   weight: ['300', '500', '700'],
@@ -67,6 +68,7 @@ export default async function RootLayout({
           <div className="flex flex-col min-h-[100vh] relative">
             {children}
             <Footer />
+            <CookieConsentBanner />
           </div>
         </NextIntlClientProvider>
       </body>

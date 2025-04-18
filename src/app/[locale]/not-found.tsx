@@ -17,7 +17,7 @@ export default function NotFound() {
           <span className="text-primary">{t('titleText1')}</span>
           <span className="whitespace-nowrap">{` ${t('titleText2')}`}</span>
         </h4>
-        <h5 className="lg:text-lg text-sm px-2 break-words ">
+        <h5 className="lg:text-lg text-sm px-2 break-words">
           <span className="block pb-2">{t('subtitleText1')}</span>
           {` ${t('subtitleText2')}`}
         </h5>
