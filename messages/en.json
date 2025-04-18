@@ -1,0 +1,94 @@
+{
+  "Adventure": {
+    "addressSectionTitle": "Where do we meet?",
+    "instructorSectionBtn": "Get to know me better",
+    "instructorSectionTitle": "Instructor",
+    "schedulerSectionCollapseText": "See available dates"
+  },
+  "Common": {
+    "acceptAll": "Accept all",
+    "decline": "Decline",
+    "cookieText1": "This website uses cookies to enhance your experience. By using our website, you consent to the use of cookies.",
+    "cookieText2": "You can read more in our",
+    "seeFullGallery": "See full gallery",
+    "WIPText1": "Oops, work in progress!",
+    "WIPText2": "Sorry, this feature isn't ready yet.",
+    "linkPrivacyPolicy": "Privacy Policy."
+  },
+  "Footer": {
+    "copyrightText": "© City Breakers. All rights reserved",
+    "linkAbout": "About",
+    "linkContact": "Contact",
+    "linkHome": "Home",
+    "linkPrivacyPolicy": "Privacy Policy",
+    "linkServices": "Services",
+    "linkTermsOfService": "Terms of Service",
+    "newsletterBtn": "Sign up",
+    "navLinksTitle": "Find your way",
+    "newsletterText1": "Zero",
+    "newsletterText2": "spam.",
+    "newsletterText3": "One",
+    "newsletterText4": "email a day.",
+    "newsletterText5": "All",
+    "newsletterText6": "the hottest offers.",
+    "newsletterTitle": "Get our newsletter",
+    "newsletterPlaceholder": "Enter your email"
+  },
+  "HomePage": {
+    "authors": {
+      "artemText": "COO and co-founder of City Breakers",
+      "miraText": "CEO and founder of City Breakers",
+      "subtitle": "behind the City Breakers",
+      "title": "People"
+    },
+    "hero": {
+      "dateLabel": "When?",
+      "description1": "From outdoor activities to discovering urban gems and learning new crafts, every trip is designed to inspire.",
+      "description2": "Join us and turn your precious free time into an unforgettable adventure!",
+      "exploreBtn": "Explore",
+      "mainTitle": "Find where the thrill begins",
+      "participantsLabel": "Number of participants",
+      "region": "Region",
+      "regionPlaceholder": "Select region",
+      "regionSelectLabel": "Regions",
+      "search": "Search",
+      "subtitle": "Tired of mundane rut?"
+    },
+    "numbers": {
+      "adventurePrograms": "adventure programs",
+      "happyClients": "happy clients",
+      "hoursOfJoy": "hours of joy",
+      "seeMore": "See more",
+      "subtitle": "We've completed",
+      "titleStart": "more than",
+      "titleEnd": "activities successfully"
+    },
+    "testimonials": {
+      "subtitle": "What others",
+      "title": "say about us"
+    }
+  },
+  "LanguageSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, pl {🇵🇱 Polish} en {🇬🇧 English} other {Unknown}}"
+  },
+  "Nav": {
+    "linkAbout": "About",
+    "linkContact": "Contact",
+    "linkHome": "Home",
+    "linkServices": "Services"
+  },
+  "NotFound": {
+    "homeBtn": "Return home",
+    "reportBtn": "Report issue",
+    "subtitleText1": "Sorry, but it seems like the page you're looking for doesn't exist.",
+    "subtitleText2": "Double-check the URL — and if something seems off, let us know with the button below.",
+    "titleText1": "Ooops!",
+    "titleText2": "Page not found"
+  },
+  "Scheduler": {
+    "start": "start",
+    "end": "end",
+    "joinBtn": "Join the group"
+  }
+}

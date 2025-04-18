@@ -8,38 +8,39 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Review } from '@/app/types/Review';
 
-const TestimonialGrid = () => {
+type TestimonialGridProps = {
+  reviews: Review[];
+};
+
+const TestimonialGrid = ({ reviews }: TestimonialGridProps) => {
   return (
-    <div className="columns-4 gap-2 h-fit">
-      {[...Array(20)].map((item, index) => (
+    <div className="columns-1 lg:columns-4 gap-2 h-fit">
+      {reviews.map((review) => (
         <Card
-          key={index}
-          className={`bg-dark-background text-dark-foreground mb-2`}
+          key={review.id}
+          className={`bg-dark-background text-dark-foreground mb-2 flex flex-col flex-nowrap break-inside-avoid border-white/50`}
         >
           <CardHeader className="flex flex-row gap-3">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-              <AvatarFallback>JD</AvatarFallback>
+              <AvatarImage
+                src={`https:${review.avatar.fields.file.url}`}
+                alt="@shadcn"
+              />
+              <AvatarFallback>{review.fallback}</AvatarFallback>
             </Avatar>
             <div>
-              <CardTitle>John Doe</CardTitle>
-              <CardDescription>@JohnDoe</CardDescription>
+              <CardTitle className="!text-base lg:!text-xl">
+                {review.author}
+              </CardTitle>
+              <CardDescription className="!text-xs text-left">
+                {review.username}
+              </CardDescription>
             </div>
           </CardHeader>
           <CardContent>
-            {index % 2 === 0 ? (
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                eget enim nunc. Mauris vestibulum orci dolor, ut euismod quam
-                molestie quis. Proin gravida iaculis ultrices.
-              </p>
-            ) : (
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                eget enim nunc.
-              </p>
-            )}
+            <p className="text-xs lg:text-sm text-left">{review.text}</p>
           </CardContent>
         </Card>
       ))}

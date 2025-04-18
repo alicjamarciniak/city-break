@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   darkMode: ['class'],
@@ -78,8 +79,54 @@ const config: Config = {
         oswald: 'var(--font-oswald)',
         miguel: 'var(--font-miguel-de-northern)',
       },
+      keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '50%': { transform: 'translateY(50%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        slideUp: 'slideUp 1s ease-out',
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    plugin(({ addComponents }) => {
+      addComponents({
+        '.t-h1': {
+          '@apply text-[2rem] lg:text-[2.5rem]': '',
+        },
+        '.t-h2': {
+          '@apply text-[1.5rem] lg:text-[2rem]': '',
+        },
+        '.t-h3': {
+          '@apply text-[1.25rem] lg:text-[1.75rem]': '',
+        },
+        '.t-h4': {
+          '@apply text-[1rem] lg:text-[1.5rem]': '',
+        },
+        '.t-h5': {
+          '@apply text-[0.75rem] lg:text-[1.25rem]': '',
+        },
+        '.t-h6': {
+          '@apply text-[0.625rem] lg:text-[1.125rem]': '',
+        },
+        '.t-p': {
+          '@apply text-[0.5rem] lg:text-[1rem]': '',
+        },
+        '.t-small': {
+          '@apply text-[0.375rem] lg:text-[0.875rem]': '',
+        },
+        '.text-2xs': {
+          '@apply text-[0.55rem] leading-normal': '',
+        },
+        '.no-scroll': {
+          '@apply h-[100vh] overflow-hidden': '',
+        },
+      });
+    }),
+  ],
 };
 export default config;

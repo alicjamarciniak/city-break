@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-roboto), Arial, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.swiper-button-prev {
+}
+
+@layer base {
+  :root {
+    --swiper-theme-color: #000 !important;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --pink-background: 21 100% 89%; /* peach pink */
+    --pink-foreground: 0 0% 100%;
+    --swamp-background: 64 27% 65%; /* swamp green */
+    --swamp-foreground: 0 0% 100%;
+    --yukon-background: 51 85% 26%; /* yukon gold */
+    --yukon-foreground: 0 0% 100%;
+    --dark-background: 0 0% 3.9%;
+    --dark-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 36 100% 49%; /* orange */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 36, 100%, 49%;
+    --tertiary: 19 83% 53%; /* bloody orange */
+    --tertiary-foreground: 0 0% 98%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --special: 336 100% 66%;
+    --special-foreground: 0 0% 98%;
+    --special-light: 336 100% 70%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .custom-ordered-list ol {
+    counter-reset: orderedlist;
+    margin-left: 4rem;
+    margin-top: 1rem;
+  }
+
+  .custom-ordered-list ol > li {
+    position: relative;
+    counter-increment: orderedlist;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+
+  .custom-ordered-list ul > li {
+    margin-left: 1rem;
+    list-style: disc;
+  }
+
+  .custom-ordered-list ol > li li {
+    margin-left: 0;
+    list-style: none;
+  }
+
+  .custom-ordered-list li::before {
+    content: counter(orderedlist);
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 0.75;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -4rem;
+    top: 0.1rem;
+    text-align: center;
+    color: white;
+    border-top-left-radius: 0.5rem !important;
+    border-radius: 4rem;
+    background: hsl(var(--pink-background));
+    background: linear-gradient(
+      149deg,
+      hsl(var(--special)) 30%,
+      hsl(var(--pink-background)) 100%
+    );
+  }
+
+  @media only screen and (max-width: 768px) {
+    .custom-ordered-list li::before {
+      font-size: 0.8rem;
+      width: 2rem;
+      height: 2rem;
+      left: -2rem;
+      border-radius: 2rem;
+    }
+
+    .custom-ordered-list ol {
+      margin-left: 2rem;
+    }
+  }
+}
+
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+h2 {
+  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+}
+
+h3 {
+  @apply scroll-m-20 text-xl font-normal tracking-tight transition-colors;
+}
+
+.rich-text h3 {
+  @apply text-special font-semibold mt-4;
+}
+
+.rich-text p {
+  @apply mt-3;
+}
+
+.rich-text hr {
+  @apply my-4 border-transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .rich-text p {
+    @apply text-sm mt-2;
+  }
+  .rich-text h6 {
+    @apply text-lg text-left;
+  }
+}
