@@ -6,7 +6,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 const getTestimonials = async (): Promise<Testimonial[]> => {
   const locale = await getLocale();
   const response = await fetch(
-    `http://localhost:3000/api/contentful/entries?locale=${locale}&contentType=testimonial`,
+    `${process.env.API_BASE_URL}/api/contentful/entries?locale=${locale}&contentType=testimonial`,
     {
       method: 'GET',
     },
