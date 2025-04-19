@@ -3,11 +3,11 @@ const PlayButton = ({ size, color }: { size: number; color: string }) => {
     <svg
       fill={color || '#000000'}
       height={`${size || 800}px`}
-      width={`${size || 800}px`}
-      version="1.1"
       id="Capa_1"
-      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
       viewBox="0 0 60 60"
+      width={`${size || 800}px`}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30

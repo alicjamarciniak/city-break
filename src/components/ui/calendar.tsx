@@ -13,20 +13,18 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
   selectedColor?: string;
 };
 
-function Calendar({
+const Calendar = ({
   className,
   classNames,
   showOutsideDays = true,
   selectedColor,
   ...props
-}: CalendarProps) {
+}: CalendarProps) => {
   const locale = useLocale();
   const dateLocale = getDateLocale(locale);
 
   return (
     <DayPicker
-      locale={dateLocale}
-      showOutsideDays={showOutsideDays}
       className={cn('p-3', className)}
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
@@ -68,9 +66,11 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeftIcon className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4" />,
+        IconLeft: () => <ChevronLeftIcon className="h-4 w-4" />,
+        IconRight: () => <ChevronRightIcon className="h-4 w-4" />,
       }}
+      locale={dateLocale}
+      showOutsideDays={showOutsideDays}
       {...props}
     />
   );

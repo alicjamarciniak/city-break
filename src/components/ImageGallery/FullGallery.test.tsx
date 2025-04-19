@@ -32,7 +32,7 @@ describe('FullGallery Component', () => {
   });
 
   it('renders the gallery correctly', () => {
-    render(<FullGallery images={mockImages} callback={mockCallback} />);
+    render(<FullGallery callback={mockCallback} images={mockImages} />);
 
     expect(screen.getByText('Go back')).toBeInTheDocument();
     expect(screen.getByAltText('Image 1')).toBeInTheDocument();
@@ -40,13 +40,13 @@ describe('FullGallery Component', () => {
   });
 
   it('calls callback function when "Go back" button is clicked', () => {
-    render(<FullGallery images={mockImages} callback={mockCallback} />);
+    render(<FullGallery callback={mockCallback} images={mockImages} />);
     fireEvent.click(screen.getByText('Go back'));
     expect(mockCallback).toHaveBeenCalledTimes(1);
   });
 
   it('navigates slides using arrow keys', () => {
-    render(<FullGallery images={mockImages} callback={mockCallback} />);
+    render(<FullGallery callback={mockCallback} images={mockImages} />);
 
     fireEvent.keyDown(document, { key: 'ArrowRight' });
     fireEvent.keyDown(document, { key: 'ArrowLeft' });
@@ -55,7 +55,7 @@ describe('FullGallery Component', () => {
   });
 
   it('renders navigation buttons (if not mobile)', () => {
-    render(<FullGallery images={mockImages} callback={mockCallback} />);
+    render(<FullGallery callback={mockCallback} images={mockImages} />);
 
     const nextButton = screen.getByRole('button', { name: /next image/i });
     const prevButton = screen.getByRole('button', { name: /prev image/i });

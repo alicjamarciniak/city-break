@@ -8,8 +8,8 @@ const ExploreBtn = ({ text }: { text: string }) => {
   return (
     <Button
       className="mt-20 lg:mt-10 rounded-full py-5 px-20 drop-shadow-md uppercase"
-      variant="special"
       onClick={showWIPToast}
+      variant="special"
     >
       {text}
     </Button>

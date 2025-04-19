@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom/vitest';
+import { ImgProps } from 'next/dist/shared/lib/get-img-props';
 
 import { vi } from 'vitest';
 
@@ -14,8 +15,8 @@ vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 /* SWIPER */
 
 vi.mock('swiper/react', () => {
-  const Swiper = ({ children }: any) => <div>{children}</div>;
-  const SwiperSlide = ({ children }: any) => (
+  const Swiper = ({ children }: { children: React.ReactNode}) => <div>{children}</div>;
+  const SwiperSlide = ({ children }: { children: React.ReactNode}) => (
     <div data-testid="slide">{children}</div>
   );
   return { Swiper, SwiperSlide };
@@ -27,14 +28,14 @@ vi.mock('swiper/modules', () => ({
 
 vi.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  default: (props: ImgProps) => <img {...props} />,
 }));
 
 vi.mock('@/components/ui/avatar', async () => {
   const mod = await import('@/components/ui/avatar');
   return {
     ...mod,
-    AvatarImage: (props: any) => (
+    AvatarImage: (props: ImgProps) => (
       <img data-testid="mock-avatar-img" {...props} />
     ),
   };

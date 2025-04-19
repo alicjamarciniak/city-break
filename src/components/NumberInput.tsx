@@ -1,6 +1,6 @@
 'use client';
 
-import React, { PropsWithChildren, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from './ui/button';
 
 const NumberInput = () => {
@@ -17,24 +17,24 @@ const NumberInput = () => {
   return (
     <div className="flex flex-row justify-center">
       <Button
-        size="sm"
         disabled={value === 1}
-        variant="outline"
         onClick={decrementValue}
+        size="sm"
+        variant="outline"
       >
         -
       </Button>
       <input
+        className="text-center text-sm w-9"
+        onChange={() => {}}
         type="text"
         value={value}
-        onChange={() => {}}
-        className="text-center text-sm w-9"
       />
       <Button
-        size="sm"
-        variant="outline"
         className="rounded-lg"
         onClick={incrementValue}
+        size="sm"
+        variant="outline"
       >
         +
       </Button>

@@ -16,18 +16,18 @@ const AuthorsSection = () => {
   const iconSize = isMobile ? 16 : 25;
 
   const socialIcons = [
-    <TwitterLogoIcon width={iconSize} height={iconSize} />,
-    <LinkedInLogoIcon width={iconSize} height={iconSize} />,
-    <InstagramLogoIcon width={iconSize} height={iconSize} />,
+    <TwitterLogoIcon height={iconSize} key='twitter-icon' width={iconSize} />,
+    <LinkedInLogoIcon height={iconSize} key='linkedin-icon' width={iconSize} />,
+    <InstagramLogoIcon height={iconSize} key='instagram-icon' width={iconSize} />,
   ];
 
   return (
     <div className="bg-pink-background px-6 lg:px-20 py-32 flex flex-col md:flex-row justify-evenly overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, x: -300 }}
-        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
         viewport={{ once: false }}
+        whileInView={{ opacity: 1, x: 0 }}
       >
         <h4 className="text-2xl lg:text-4xl lg:mt-8 font-thin mb-10">
           <span
@@ -43,28 +43,28 @@ const AuthorsSection = () => {
       <motion.div
         className="flex flex-row gap-6 lg:gap-16"
         initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
         viewport={{ once: false }}
+        whileInView={{ opacity: 1, x: 0 }}
       >
         <div className="w-[150px] lg:w-[300px]">
           <ProfileBox
-            profileUrl="mira-kowalska"
             firstName="Mira"
             lastName="Kowalska"
-            text={t('authors.miraText')}
-            src="/images/Mira.jpg"
+            profileUrl="mira-kowalska"
             socialIcons={socialIcons}
+            src="/images/Mira.jpg"
+            text={t('authors.miraText')}
           />
         </div>
         <div className="w-[150px] lg:w-[300px]">
           <ProfileBox
-            profileUrl="artem-bondar"
             firstName="Artem"
             lastName="Bondar"
-            text={t('authors.artemText')}
-            src="/images/Artem.jpg"
+            profileUrl="artem-bondar"
             socialIcons={socialIcons}
+            src="/images/Artem.jpg"
+            text={t('authors.artemText')}
           />
         </div>
       </motion.div>

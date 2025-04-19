@@ -19,14 +19,14 @@ const TestimonialGrid = ({ reviews }: TestimonialGridProps) => {
     <div className="columns-1 lg:columns-4 gap-2 h-fit">
       {reviews.map((review) => (
         <Card
+          className="bg-dark-background text-dark-foreground mb-2 flex flex-col flex-nowrap break-inside-avoid border-white/50"
           key={review.id}
-          className={`bg-dark-background text-dark-foreground mb-2 flex flex-col flex-nowrap break-inside-avoid border-white/50`}
         >
           <CardHeader className="flex flex-row gap-3">
             <Avatar>
               <AvatarImage
-                src={`https:${review.avatar.fields.file.url}`}
                 alt="@shadcn"
+                src={`https:${review.avatar.fields.file.url}`}
               />
               <AvatarFallback>{review.fallback}</AvatarFallback>
             </Avatar>

@@ -21,11 +21,11 @@ const SearchBar = ({ children }: PropsWithChildren) => {
   return isMobile ? (
     <div className="mt-5 flex justify-center">
       <Button
-        variant="secondary"
         className="text-black rounded-full py-5 px-20 drop-shadow-md"
         onClick={showWIPToast}
+        variant="secondary"
       >
-        <MagnifyingGlassIcon height={18} width={18} className="mr-2" />{' '}
+        <MagnifyingGlassIcon className="mr-2" height={18} width={18} />{' '}
         {t('hero.search')}
       </Button>
     </div>
@@ -36,9 +36,9 @@ const SearchBar = ({ children }: PropsWithChildren) => {
       <div className="flex flex-row lg:flex-col relative">
         <Label className="text-xs font-semibold text-muted-foreground flex items-center h-4">
           <AvatarIcon
+            className="font-bold text-black left-3 absolute lg:hidden"
             height={18}
             width={18}
-            className="font-bold text-black left-3 absolute lg:hidden"
           />
           <span className="hidden lg:inline">
             {t('hero.participantsLabel')}
@@ -61,8 +61,8 @@ const SearchBar = ({ children }: PropsWithChildren) => {
       <div className="flex self-center flex-grow justify-end items-end ">
         <Button
           className="flex-1 lg:mr-3"
-          variant="default"
           onClick={showWIPToast}
+          variant="default"
         >
           {t('hero.search')}
         </Button>

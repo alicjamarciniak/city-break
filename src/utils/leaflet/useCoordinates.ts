@@ -1,4 +1,4 @@
-import { LatLngExpression, LatLngTuple } from 'leaflet';
+import { LatLngTuple } from 'leaflet';
 
 const fetchCoordinates = async (address: string) => {
   const response = await fetch(

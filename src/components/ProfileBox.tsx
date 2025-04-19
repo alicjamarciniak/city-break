@@ -2,11 +2,11 @@
 
 import useMediaQueries from '@/hooks/useMediaQueries';
 import { handleWIPLinks } from '@/utils/sonner/toast';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-type ProfileBoxProps = {
+export type ProfileBoxProps = {
   profileUrl: string;
   firstName: string;
   lastName: string;
@@ -29,10 +29,10 @@ const ProfileBox = ({
   return (
     <Link href={`/${profileUrl}`} onClick={handleWIPLinks}>
       <div
+        className="relative flex flex-col h-[260px] lg:h-[400px]"
         data-testid="profile-container"
         onMouseEnter={() => setIconsVisibility(true)}
         onMouseLeave={() => setIconsVisibility(false)}
-        className="relative flex flex-col h-[260px] lg:h-[400px]"
       >
         <div
           className={`relative flex w-[150px] lg:w-[300px] flex-grow basis-auto transition-all duration-500 ease-in-out
@@ -40,9 +40,9 @@ const ProfileBox = ({
       `}
         >
           <Image
-            src={src}
             alt={`Photo of ${firstName} ${lastName}`}
             fill
+            src={src}
             style={{ objectFit: 'cover' }}
           />
         </div>
@@ -50,7 +50,7 @@ const ProfileBox = ({
         <div className="w-full bg-white">
           <div className="p-3 lg:p-5">
             <h6 className="font-thin text-lg lg:text-3xl">
-              <span data-testid="first-name" className="font-bold mr-2">
+              <span className="font-bold mr-2" data-testid="first-name">
                 {firstName}
               </span>
               {lastName}
@@ -59,14 +59,14 @@ const ProfileBox = ({
               {text}
             </p>
           </div>
-          <div className={`flex overflow-hidden`}>
+          <div className="flex overflow-hidden">
             {socialIcons?.map((icon, i) => (
               <div
-                data-testid={`icon-${i}`}
-                key={`icon-${i}`}
                 className={`flex basis-1/3 justify-center
               ${iconsVisibility || isMobile ? 'max-h-[60px] p-2 lg:p-4' : 'max-h-0'}
               hover:basis-2/3 transition-all duration-500 ease-in-out `}
+                data-testid={`icon-${i}`}
+                key={`icon-${i}`}
                 style={{
                   backgroundColor: `hsl(var(--special) / ${(i + 1) * 15}%)`,
                 }}

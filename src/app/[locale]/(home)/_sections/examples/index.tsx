@@ -30,7 +30,7 @@ const ExamplesSection = () => {
   return (
     <div className="bg-white p-14 relative">
       <div className="my-10 h-[270px]">
-        <ExampleSwiper slides={adventurePreviews} isLoading={isLoading} />
+        <ExampleSwiper isLoading={isLoading} slides={adventurePreviews} />
       </div>
     </div>
   );

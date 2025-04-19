@@ -74,14 +74,14 @@ const Footer = () => {
           </div>
           <div className="flex flex-row lg:flex-col gap-2 lg:gap-4">
             <Input
-              type="text"
               className="border-yukon-background border-2 max-w-[360px]"
               placeholder={t('newsletterPlaceholder')}
+              type="text"
             />
             <Button
               className="rounded-full py-5 px-5 lg:w-min lg:px-16 drop-shadow-md !bg-yukon-background"
-              variant="default"
               onClick={showWIPToast}
+              variant="default"
             >
               {t('newsletterBtn')}
             </Button>
@@ -90,13 +90,13 @@ const Footer = () => {
 
         <div className="basis-2/5 justify-center relative hidden lg:flex">
           <div className="absolute bg-white/30 top-[3px] bottom-[3px] left-[calc(10%+3px)] right-[calc(10%+3px)] flex justify-center items-center">
-            <PlayButton size={75} color="hsl(var(--yukon-background))" />
+            <PlayButton color="hsl(var(--yukon-background))" size={75} />
           </div>
           <video
-            ref={videoRef}
+            className="w-[80%] border-yukon-background rounded-md border-[3px]"
             loop
             muted
-            className="w-[80%] border-yukon-background rounded-md border-[3px]"
+            ref={videoRef}
           >
             <source src="/videos/team.mp4" type="video/mp4" />
           </video>
@@ -108,9 +108,9 @@ const Footer = () => {
       text-sm justify-between items-center flex-wrap"
       >
         <div className="flex gap-4 basis-1/4 order-1">
-          <TwitterLogoIcon width={25} height={25} onClick={showWIPToast} />
-          <LinkedInLogoIcon width={25} height={25} onClick={showWIPToast} />
-          <InstagramLogoIcon width={25} height={25} onClick={showWIPToast} />
+          <TwitterLogoIcon height={25} onClick={showWIPToast} width={25} />
+          <LinkedInLogoIcon height={25} onClick={showWIPToast} width={25} />
+          <InstagramLogoIcon height={25} onClick={showWIPToast} width={25} />
         </div>
 
         <div

@@ -12,7 +12,7 @@ export default function NotFound() {
       <div className="flex lg:w-[65%] h-auto self-center">
         <NotFoundLottieAnimation />
       </div>
-      <div id="container" className="flex flex-col lg:items-start gap-6 px-4">
+      <div className="flex flex-col lg:items-start gap-6 px-4" id="container">
         <h4 className="lg:text-7xl text-4xl font-miguel px-2 uppercase">
           <span className="text-primary">{t('titleText1')}</span>
           <span className="whitespace-nowrap">{` ${t('titleText2')}`}</span>
@@ -24,8 +24,8 @@ export default function NotFound() {
         <div className="flex flex-row lg:gap-10 gap-6 lg:mt-10 mt-5 lg:mx-10 justify-center">
           <Link href="/">
             <Button
-              variant="special"
               className="px-8 lg:px-10 lg:py-6 lg:min-w-48"
+              variant="special"
             >
               {t('homeBtn')}
             </Button>

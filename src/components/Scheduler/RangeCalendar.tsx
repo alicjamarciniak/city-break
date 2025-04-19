@@ -16,12 +16,12 @@ const RangeCalendar = ({ groups }: CalendarProps) => {
   return (
     <div className="overflow-x-hidden">
       <Tabs
-        defaultValue={groups[0].groupName}
         className="flex flex-col  justify-center"
+        defaultValue={groups[0].groupName}
       >
         <TabsList className="flex flex-row gap-2 bg-transparent h-auto justify-start overflow-x-scroll">
           {groups.map((group) => (
-            <Tab key={group.groupName} group={group} hasEndDate>
+            <Tab group={group} hasEndDate key={group.groupName}>
               <div className="text-2xs lg:text-xs flex flex-col gap-2 lg:gap-0">
                 <div className="flex justify-between uppercase flex-col lg:flex-row">
                   {t('start')}:
@@ -55,14 +55,14 @@ const RangeCalendar = ({ groups }: CalendarProps) => {
         </TabsList>
 
         {groups.map((group) => (
-          <TabsContent value={group.groupName} key={group.groupName}>
+          <TabsContent key={group.groupName} value={group.groupName}>
             <Calendar
+              fromMonth={group.startDate}
               mode="range"
               selected={{
                 from: group.startDate,
                 to: group.endDate,
               }}
-              fromMonth={group.startDate}
               selectedColor="special"
             />
           </TabsContent>

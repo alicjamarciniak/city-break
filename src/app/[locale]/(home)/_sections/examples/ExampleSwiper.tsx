@@ -22,13 +22,7 @@ const ExampleSwiper = ({ slides, isLoading }: ExampleSwiperProps) => {
   return (
     <>
       <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        loop={true}
         allowTouchMove
-        onSwiper={(it) => (sliderRef.current = it)}
-        modules={[Navigation]}
-        className="mySwiper"
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -46,6 +40,12 @@ const ExampleSwiper = ({ slides, isLoading }: ExampleSwiperProps) => {
             spaceBetween: 30,
           },
         }}
+        className="mySwiper"
+        loop={true}
+        modules={[Navigation]}
+        onSwiper={(it) => (sliderRef.current = it)}
+        slidesPerView={4}
+        spaceBetween={30}
       >
         {isLoading ? (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center h-[270px] overflow-y-hidden">
@@ -71,13 +71,13 @@ const ExampleSwiper = ({ slides, isLoading }: ExampleSwiperProps) => {
       </Swiper>
       <ChevronRightCircle
         className="absolute top-1/2 right-4"
-        size={30}
         onClick={() => sliderRef.current?.slideNext()}
+        size={30}
       />
       <ChevronLeftCircle
         className="absolute top-1/2 left-4"
-        size={30}
         onClick={() => sliderRef.current?.slidePrev()}
+        size={30}
       />
     </>
   );
