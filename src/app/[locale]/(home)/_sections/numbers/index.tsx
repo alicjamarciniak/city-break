@@ -61,9 +61,7 @@ const NumbersSection = async () => {
         </div>
       </div>
 
-      <div
-        className="bg-dark-background overflow-hidden relative max-h-[500px] flex justify-center py-12 px-6 lg:p-12"
-      >
+      <div className="bg-dark-background overflow-hidden relative max-h-[500px] flex justify-center py-12 px-6 lg:p-12">
         <div className="overflow-hidden bg-gradient-to-t from-dark-background to-40% to-transparent absolute z-10 top-0 left-0 right-0 bottom-0" />
 
         <Reviews>

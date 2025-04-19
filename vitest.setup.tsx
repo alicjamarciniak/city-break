@@ -15,8 +15,10 @@ vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 /* SWIPER */
 
 vi.mock('swiper/react', () => {
-  const Swiper = ({ children }: { children: React.ReactNode}) => <div>{children}</div>;
-  const SwiperSlide = ({ children }: { children: React.ReactNode}) => (
+  const Swiper = ({ children }: { children: React.ReactNode }) => (
+    <div>{children}</div>
+  );
+  const SwiperSlide = ({ children }: { children: React.ReactNode }) => (
     <div data-testid="slide">{children}</div>
   );
   return { Swiper, SwiperSlide };

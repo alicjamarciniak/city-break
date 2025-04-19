@@ -16,9 +16,13 @@ const AuthorsSection = () => {
   const iconSize = isMobile ? 16 : 25;
 
   const socialIcons = [
-    <TwitterLogoIcon height={iconSize} key='twitter-icon' width={iconSize} />,
-    <LinkedInLogoIcon height={iconSize} key='linkedin-icon' width={iconSize} />,
-    <InstagramLogoIcon height={iconSize} key='instagram-icon' width={iconSize} />,
+    <TwitterLogoIcon height={iconSize} key="twitter-icon" width={iconSize} />,
+    <LinkedInLogoIcon height={iconSize} key="linkedin-icon" width={iconSize} />,
+    <InstagramLogoIcon
+      height={iconSize}
+      key="instagram-icon"
+      width={iconSize}
+    />,
   ];
 
   return (

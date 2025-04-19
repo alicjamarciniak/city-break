@@ -62,7 +62,8 @@ const Map = ({ address, facilityName }: MapProps) => {
   return (
     <div className="w-full h-[400px] sticky my-10 ">
       {loading ? <div>Loading...</div> : null}
-      {!loading && position ? <MapContainer
+      {!loading && position ? (
+        <MapContainer
           center={position}
           className="h-full w-full"
           scrollWheelZoom={false}
@@ -80,8 +81,9 @@ const Map = ({ address, facilityName }: MapProps) => {
               {address}
             </Popup>
           </Marker>
-        </MapContainer> : null}
-        {error ? <div>{error}</div>: null}
+        </MapContainer>
+      ) : null}
+      {error ? <div>{error}</div> : null}
     </div>
   );
 };

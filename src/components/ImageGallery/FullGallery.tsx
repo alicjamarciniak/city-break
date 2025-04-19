@@ -39,7 +39,9 @@ const FullGallery = ({ images, callback }: FullGalleryProps) => {
       <div className="flex flex-1 flex-col">
         <div className="flex flex-row gap-2 px-10 lg:px-20 py-5 items-center">
           <DoubleArrowLeftIcon height={20} width={20} />
-          <button onClick={callback} type="button">Go back</button>
+          <button onClick={callback} type="button">
+            Go back
+          </button>
         </div>
 
         <div className="flex flex-1">
@@ -51,10 +53,12 @@ const FullGallery = ({ images, callback }: FullGalleryProps) => {
             onSwiper={(it) => (sliderRef.current = it)}
             slidesPerView={1}
             {...(isMobile ? { pagination: { clickable: true } } : {})}
-            style={{
-              '--swiper-pagination-color': 'hsl(var(--special))',
-              '--swiper-pagination-bullet-inactive-color': '#999999',
-            } as React.CSSProperties}
+            style={
+              {
+                '--swiper-pagination-color': 'hsl(var(--special))',
+                '--swiper-pagination-bullet-inactive-color': '#999999',
+              } as React.CSSProperties
+            }
           >
             {images?.map((image, id) => (
               <SwiperSlide
@@ -73,7 +77,8 @@ const FullGallery = ({ images, callback }: FullGalleryProps) => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {!isMobile && images.length > 1 ? <>
+          {!isMobile && images.length > 1 ? (
+            <>
               <ChevronRightCircle
                 aria-label="Next image"
                 className="absolute top-[60%] lg:top-1/2 right-10 lg:right-20 z-10"
@@ -88,7 +93,8 @@ const FullGallery = ({ images, callback }: FullGalleryProps) => {
                 role="button"
                 size={30}
               />
-            </> : null}
+            </>
+          ) : null}
         </div>
       </div>
     </div>

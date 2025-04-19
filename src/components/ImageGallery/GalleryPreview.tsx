@@ -36,10 +36,8 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
         />
       </div>
 
-      {!isMobile && previewCount > 2 ? <div
-          className="flex flex-col gap-3"
-          style={{ flexBasis: `${col2}%` }}
-        >
+      {!isMobile && previewCount > 2 ? (
+        <div className="flex flex-col gap-3" style={{ flexBasis: `${col2}%` }}>
           <div className="flex flex-1 relative rounded-md overflow-hidden">
             <Image
               alt={images[1].alt}
@@ -56,8 +54,10 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
               style={{ objectFit: 'cover' }}
             />
           </div>
-        </div> : null}
-      {!isMobile && previewCount !== 1 && previewCount !== 3 ? <div
+        </div>
+      ) : null}
+      {!isMobile && previewCount !== 1 && previewCount !== 3 ? (
+        <div
           className="flex relative rounded-md overflow-hidden"
           style={{ flexBasis: `${col3}%` }}
         >
@@ -67,12 +67,13 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
             src={`https:${images[3]?.src || images[2]?.src}`}
             style={{ objectFit: 'cover' }}
           />
-        </div> : null}
+        </div>
+      ) : null}
 
       <button
-      className="absolute flex bottom-5 right-5 bg-white px-4 py-2 rounded-full shadow-lg"
+        className="absolute flex bottom-5 right-5 bg-white px-4 py-2 rounded-full shadow-lg"
         onClick={callback}
-        type='button'
+        type="button"
       >
         <small className="text-2xs lg:text-xs font-thin">
           {t('seeFullGallery')} ({images.length})

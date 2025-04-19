@@ -13,6 +13,6 @@ const Skeleton = ({
       {...props}
     />
   );
-}
+};
 
 export { Skeleton };

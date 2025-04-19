@@ -22,10 +22,12 @@ export const StickyNav = ({ isHomepage = false }: StickyNavProps) => {
 
   return (
     <>
-      {isMenuOpen ? <div
+      {isMenuOpen ? (
+        <div
           className="fixed h-[100vh] w-[100vw] bg-black/30 z-[998]"
           onClick={toggleMenu}
-         /> : null}
+        />
+      ) : null}
 
       <nav
         className={`md:fixed top-0 h-[60px] m-0 ${isMenuOpen ? 'fixed bg-white w-[70vw] z-[999]' : 'absolute bg-transparent w-full z-[40]'}`}
@@ -87,7 +89,7 @@ export const StickyNav = ({ isHomepage = false }: StickyNavProps) => {
               <button
                 className={`${isHomepage ? 'text-white' : 'text-gray-700'} lg:text-gray-700 lg:hover:text-gray-900`}
                 onClick={toggleMenu}
-                type='button'
+                type="button"
               >
                 {isMenuOpen ? (
                   <X className="text-gray-700" size={24} />
@@ -100,7 +102,8 @@ export const StickyNav = ({ isHomepage = false }: StickyNavProps) => {
         </div>
 
         {/* Mobile menu, show/hide based on menu state */}
-        {isMenuOpen ? <div className="md:hidden h-[100vh] z-[55]">
+        {isMenuOpen ? (
+          <div className="md:hidden h-[100vh] z-[55]">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-[70vw] h-full bg-white">
               <Link
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
@@ -131,8 +134,9 @@ export const StickyNav = ({ isHomepage = false }: StickyNavProps) => {
               </Link>
               <LanguageSwitcher />
             </div>
-          </div> : null}
+          </div>
+        ) : null}
       </nav>
     </>
   );
-}
+};

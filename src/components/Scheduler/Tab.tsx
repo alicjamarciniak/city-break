@@ -33,7 +33,8 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
             </span>
           </div>
 
-          {hasEndDate ? <>
+          {hasEndDate ? (
+            <>
               <span className="text-2xl lg:text-5xl font-thin">-</span>
               <div className="text-2xl lg:text-5xl font-thin">
                 {format(group.endDate, 'dd')}
@@ -41,7 +42,8 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
                   {format(group.endDate, 'MMMM', { locale: dateLocale })}
                 </span>
               </div>
-            </> : null}
+            </>
+          ) : null}
         </div>
 
         <p className="font-thin text-xs lg:text-lg mt-3 lg:mt-6 mb-3 lg:mb-6 text-wrap line-clamp-1 lg:line-clamp-2 lg:w-[200px]">
