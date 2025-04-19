@@ -36,14 +36,14 @@ const NumbersSection = async () => {
         </h3>
         <div className="justify-center gap-3 lg:gap-20 pt-14 flex">
           <div className="w-[200px] flex justify-start lg:justify-center items-center flex-col gap-1 p-0 lg:p-5">
-            <PersonIcon width={40} height={40} className="text-special-light" />
+            <PersonIcon className="text-special-light" height={40} width={40} />
             <div className="text-2xl font-extrabold">
               <AnimatedCounter to={1800} />+
             </div>
             <div className="text-sm font-bold">{t('numbers.happyClients')}</div>
           </div>
           <div className="w-[200px] flex justify-start lg:justify-center items-center flex-col gap-1 p-0 lg:p-5">
-            <RocketIcon height={40} width={40} className="text-special-light" />
+            <RocketIcon className="text-special-light" height={40} width={40} />
             <div className="text-2xl font-extrabold">
               <AnimatedCounter to={147} />
             </div>
@@ -52,7 +52,7 @@ const NumbersSection = async () => {
             </div>
           </div>
           <div className="w-[200px] flex justify-start lg:justify-center items-center flex-col gap-1 p-0 lg:p-5">
-            <HeartIcon width={40} height={40} className="text-special-light" />
+            <HeartIcon className="text-special-light" height={40} width={40} />
             <div className="text-2xl font-extrabold">
               <AnimatedCounter to={17480} />
             </div>
@@ -61,10 +61,8 @@ const NumbersSection = async () => {
         </div>
       </div>
 
-      <div
-        className={`bg-dark-background overflow-hidden relative max-h-[500px] flex justify-center py-12 px-6 lg:p-12`}
-      >
-        <div className="overflow-hidden bg-gradient-to-t from-dark-background to-40% to-transparent absolute z-10 top-0 left-0 right-0 bottom-0"></div>
+      <div className="bg-dark-background overflow-hidden relative max-h-[500px] flex justify-center py-12 px-6 lg:p-12">
+        <div className="overflow-hidden bg-gradient-to-t from-dark-background to-40% to-transparent absolute z-10 top-0 left-0 right-0 bottom-0" />
 
         <Reviews>
           <TestimonialGrid reviews={reviews} />

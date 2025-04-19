@@ -2,12 +2,12 @@ const LeftQuote = ({ size, color }: { size: number; color: string }) => {
   return (
     <svg
       fill={color || '#000000'}
-      version="1.1"
-      id="Capa_1"
-      xmlns="http://www.w3.org/2000/svg"
-      width={`${size || 800}px`}
       height={`${size || 800}px`}
+      id="Capa_1"
+      version="1.1"
       viewBox="0 0 95.333 95.332"
+      width={`${size || 800}px`}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <g>
         <g>

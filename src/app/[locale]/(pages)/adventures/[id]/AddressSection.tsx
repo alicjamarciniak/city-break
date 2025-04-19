@@ -25,26 +25,26 @@ const AddressSection = ({ address, facilityName }: AddressSectionProps) => {
       <div className="mt-6 flex flex-col gap-3 text-sm lg:text-base">
         <p>
           <HomeIcon
+            className="text-special inline-block mr-3"
             height={20}
             width={20}
-            className="text-special inline-block mr-3"
           />
           {facilityName}
         </p>
         <p>
           <SewingPinIcon
+            className="text-special inline-block mr-3"
             height={20}
             width={20}
-            className="text-special inline-block mr-3"
           />
           {address}
         </p>
       </div>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
         viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
       >
         <LazyMap address={address} facilityName={facilityName} />
       </motion.div>

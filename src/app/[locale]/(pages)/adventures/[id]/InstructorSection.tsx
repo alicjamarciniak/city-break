@@ -19,9 +19,9 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
       viewport={{ once: true }}
+      whileInView={{ opacity: 1, y: 0 }}
     >
       <Card
         className={`flex bg-swamp-background/10 border-transparent lg:border-yukon-background/50 text-dark-foreground 
@@ -31,9 +31,9 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
           <div>
             <div className="h-[200px] w-auto lg:w-[150px] relative rounded-tr-[50px] rounded-bl-[50px] overflow-hidden">
               <Image
-                src={`https:${instructor.fields.avatar.fields.file.url}`}
                 alt={instructor.fields.avatarAlt}
                 fill
+                src={`https:${instructor.fields.avatar.fields.file.url}`}
                 style={{ objectFit: 'cover' }}
               />
             </div>
@@ -43,6 +43,7 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
             <CardHeader className="flex flex-row gap-3">
               <CardTitle className="text-black font-thin text-sm">
                 {t('instructorSectionTitle')}
+                {/* eslint-disable-next-line react/jsx-max-depth */}
                 <span className="text-special font-bold text-2xl block">
                   {instructor.fields.firstName} {instructor.fields.lastName}
                 </span>
@@ -54,11 +55,12 @@ const InstructorSection = ({ instructor }: InstructorSectionProps) => {
               </p>
 
               <Link
-                href=""
                 className="text-yukon-background mt-3 flex items-center gap-2"
+                href=""
                 onClick={handleWIPLinks}
               >
                 {t('instructorSectionBtn')}
+                {/* eslint-disable-next-line react/jsx-max-depth */}
                 <DoubleArrowRightIcon />
               </Link>
             </CardContent>

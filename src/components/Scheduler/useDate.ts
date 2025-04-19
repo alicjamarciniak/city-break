@@ -1,4 +1,4 @@
-import { eachDayOfInterval, parseISO, format } from 'date-fns';
+import { eachDayOfInterval, parseISO } from 'date-fns';
 import {
   isMonday,
   isTuesday,

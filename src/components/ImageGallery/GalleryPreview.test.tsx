@@ -39,7 +39,7 @@ describe('GalleryPreview', () => {
 
     render(
       <NextIntlClientProvider locale="en" messages={messages}>
-        <GalleryPreview images={images} callback={mockCallback} />
+        <GalleryPreview callback={mockCallback} images={images} />
       </NextIntlClientProvider>,
     );
 
@@ -71,7 +71,7 @@ describe('GalleryPreview', () => {
 
     render(
       <NextIntlClientProvider locale="en" messages={messages}>
-        <GalleryPreview images={images} callback={mockCallback} />
+        <GalleryPreview callback={mockCallback} images={images} />
       </NextIntlClientProvider>,
     );
 
@@ -101,7 +101,7 @@ describe('GalleryPreview', () => {
 
     render(
       <NextIntlClientProvider locale="en" messages={messages}>
-        <GalleryPreview images={images} callback={mockCallback} />
+        <GalleryPreview callback={mockCallback} images={images} />
       </NextIntlClientProvider>,
     );
 
@@ -132,7 +132,7 @@ describe('GalleryPreview', () => {
 
     render(
       <NextIntlClientProvider locale="en" messages={messages}>
-        <GalleryPreview images={images} callback={mockCallback} />
+        <GalleryPreview callback={mockCallback} images={images} />
       </NextIntlClientProvider>,
     );
 

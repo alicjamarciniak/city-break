@@ -8,7 +8,6 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { type LatLngTuple, type Marker as MarkerType, divIcon } from 'leaflet';
 import { useEffect, useRef, useState } from 'react';
 import useCoordinates from './useCoordinates';
-import useMediaQueries from '@/hooks/useMediaQueries';
 
 type MapProps = {
   address: string;
@@ -40,7 +39,6 @@ const Map = ({ address, facilityName }: MapProps) => {
   const [position, setPosition] = useState<LatLngTuple>([0, 0]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { isMdDevice: isMobile } = useMediaQueries();
 
   const markerRef = useRef<MarkerType>(null);
 
@@ -63,20 +61,20 @@ const Map = ({ address, facilityName }: MapProps) => {
 
   return (
     <div className="w-full h-[400px] sticky my-10 ">
-      {loading && <div>Loading...</div>}
-      {!loading && position && (
+      {loading ? <div>Loading...</div> : null}
+      {!loading && position ? (
         <MapContainer
           center={position}
-          zoom={13}
           className="h-full w-full"
           scrollWheelZoom={false}
+          zoom={13}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <Marker
-            ref={markerRef}
-            position={position}
             draggable={false}
             icon={icon}
+            position={position}
+            ref={markerRef}
           >
             <Popup>
               📍 {`${facilityName}, `}
@@ -84,7 +82,8 @@ const Map = ({ address, facilityName }: MapProps) => {
             </Popup>
           </Marker>
         </MapContainer>
-      )}
+      ) : null}
+      {error ? <div>{error}</div> : null}
     </div>
   );
 };

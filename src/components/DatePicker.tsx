@@ -31,12 +31,12 @@ export default function DatePickerWithRange({
       <Popover>
         <PopoverTrigger asChild>
           <Button
-            id="date"
-            variant={'input'}
             className={cn(
               'w-[260px] justify-start text-left font-normal',
               !date && 'text-muted-foreground',
             )}
+            id="date"
+            variant="input"
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
             {date?.from ? (
@@ -53,14 +53,14 @@ export default function DatePickerWithRange({
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent align="start" className="w-auto p-0">
           <Calendar
+            defaultMonth={date?.from}
             initialFocus
             mode="range"
-            defaultMonth={date?.from}
-            selected={date}
-            onSelect={setDate}
             numberOfMonths={2}
+            onSelect={setDate}
+            selected={date}
           />
         </PopoverContent>
       </Popover>

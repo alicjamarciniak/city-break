@@ -19,10 +19,10 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
 
   return (
     <TabsTrigger
-      value={group.groupName}
       className="group flex basis-[49%] shrink-0 grow-0 flex-[1] bg-yukon-background/50 text-yukon-foreground 
       rounded-none pt-6 lg:pt-10 px-6 lg:px-10 pb-0 data-[state=active]:bg-yukon-background 
       data-[state=active]:text-yukon-foreground w-full [&data-[state=active]>.join-btn]:bg-black"
+      value={group.groupName}
     >
       <div className="text-left w-full">
         <div className="flex flex-row gap-3 lg:gap-5 ">
@@ -33,7 +33,7 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
             </span>
           </div>
 
-          {hasEndDate && (
+          {hasEndDate ? (
             <>
               <span className="text-2xl lg:text-5xl font-thin">-</span>
               <div className="text-2xl lg:text-5xl font-thin">
@@ -43,7 +43,7 @@ const Tab = ({ group, hasEndDate = false, children }: TabProps) => {
                 </span>
               </div>
             </>
-          )}
+          ) : null}
         </div>
 
         <p className="font-thin text-xs lg:text-lg mt-3 lg:mt-6 mb-3 lg:mb-6 text-wrap line-clamp-1 lg:line-clamp-2 lg:w-[200px]">

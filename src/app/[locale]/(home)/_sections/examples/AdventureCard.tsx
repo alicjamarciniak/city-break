@@ -15,16 +15,16 @@ const AdventureCard = ({ adventure }: AdventureCardProps) => {
         <Card className="w-[250px] lg:w-[300px] rounded-sm h-auto lg:h-[200px] overflow-hidden m-1 mb-7 shadow-lg relative">
           <Image
             alt={adventure.images[0].fields.title}
-            width={300}
             height={200}
             src={`https:${adventure.images[0].fields.file.url}`}
+            width={300}
           />
         </Card>
 
         <Avatar className="absolute h-[3.3rem] w-[3.3rem] lg:h-[4.3rem] lg:w-[4.3rem] left-[190px] top-[135px] lg:left-[230px] lg:top-[155px]">
           <AvatarImage
-            src={`https:${adventure.instructor[0].fields.avatar.fields.file.url}`}
             alt={adventure.instructor[0].fields.avatarAlt}
+            src={`https:${adventure.instructor[0].fields.avatar.fields.file.url}`}
           />
           <AvatarFallback>
             {adventure.instructor[0].fields.fallback}

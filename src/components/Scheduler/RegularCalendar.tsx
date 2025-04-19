@@ -19,13 +19,13 @@ const RegularCalendar = ({ groups }: CalendarProps) => {
 
   return (
     <div>
-      <Tabs defaultValue={groups[0].groupName} className="overflow-x-scroll">
+      <Tabs className="overflow-x-scroll" defaultValue={groups[0].groupName}>
         <TabsList className="flex flex-row gap-2 bg-transparent h-auto p-0 justify-start">
           {groups.map((group) => (
-            <Tab key={group.groupName} group={group} hasEndDate>
+            <Tab group={group} hasEndDate key={group.groupName}>
               <div className="text-xs lg:w-[70%]">
                 {group.weekDays?.map((weekday) => (
-                  <div key={weekday} className="flex justify-between">
+                  <div className="flex justify-between" key={weekday}>
                     <div className="capitalize">
                       {localizeWeekday(weekday, locale)}
                     </div>
@@ -41,11 +41,11 @@ const RegularCalendar = ({ groups }: CalendarProps) => {
         </TabsList>
 
         {mappedGroups.map((group) => (
-          <TabsContent value={group.groupName} key={group.groupName}>
+          <TabsContent key={group.groupName} value={group.groupName}>
             <Calendar
+              fromMonth={group.startDate}
               mode="multiple"
               selected={group.days}
-              fromMonth={group.startDate}
               selectedColor="special"
             />
           </TabsContent>

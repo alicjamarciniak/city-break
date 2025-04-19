@@ -63,7 +63,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${miguelDeNorthernFont.variable} ${robotoFont.variable} ${oswaldFont.variable} antialiased`}
       >
         <NextIntlClientProvider>
-          <Toaster position="top-right" closeButton />
+          <Toaster closeButton position="top-right" />
 
           <div className="flex flex-col min-h-[100vh] relative">
             {children}

@@ -23,7 +23,7 @@ const TestimonialsSection = async () => {
     <div>
       <div className="flex h-[100vh] md:h-[60vh] lg:h-auto bg-gradient-to-b from-dark-background to-black relative">
         <div className="hidden lg:flex py-10">
-          <div className="flex-[1]"></div>
+          <div className="flex-[1]" />
           <div className="flex-[3] overflow-hidden">
             <Spline
               className="ml-[180px]"

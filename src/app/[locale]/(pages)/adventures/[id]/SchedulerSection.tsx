@@ -35,8 +35,8 @@ const SchedulerSection = ({ adventure }: SchedulerSectionProps) => {
           </CollapsibleTrigger>
           <CollapsibleContent>
             <Scheduler
-              variant={adventure.variant}
               groups={adventure.participantsGroups.map(({ fields }) => fields)}
+              variant={adventure.variant}
             />
           </CollapsibleContent>
         </Collapsible>
@@ -44,8 +44,8 @@ const SchedulerSection = ({ adventure }: SchedulerSectionProps) => {
     </div>
   ) : (
     <Scheduler
-      variant={adventure.variant}
       groups={adventure.participantsGroups.map(({ fields }) => fields)}
+      variant={adventure.variant}
     />
   );
 };

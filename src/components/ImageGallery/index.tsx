@@ -28,8 +28,8 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
 
   return (
     <>
-      <GalleryPreview images={images} callback={toggleGallery} />
-      {isOpen && <FullGallery images={images} callback={toggleGallery} />}
+      <GalleryPreview callback={toggleGallery} images={images} />
+      {isOpen ? <FullGallery callback={toggleGallery} images={images} /> : null}
     </>
   );
 };

@@ -3,6 +3,7 @@ import AuthorsSection from '@/app/[locale]/(home)/_sections/authors';
 import { useTranslations } from 'next-intl';
 import useMediaQueries from '@/hooks/useMediaQueries';
 import { vi, describe, beforeEach, Mock, expect, it } from 'vitest';
+import { ProfileBoxProps } from '@/components/ProfileBox';
 
 vi.mock('next-intl', () => ({
   useTranslations: vi.fn(),
@@ -14,15 +15,15 @@ vi.mock('@/hooks/useMediaQueries', () => ({
 }));
 
 vi.mock('@/components', () => ({
-  ProfileBox: ({ firstName, lastName, text, socialIcons }: any) => (
+  ProfileBox: ({ firstName, lastName, text, socialIcons }: ProfileBoxProps) => (
     <div data-testid="profile-box">
       <h2>
         {firstName} {lastName}
       </h2>
       <p>{text}</p>
       <div data-testid="social-icons">
-        {socialIcons.map((icon: any, i: number) => (
-          <span key={i} data-testid="icon">
+        {socialIcons.map((icon: React.ReactNode, i: number) => (
+          <span data-testid="icon" key={i}>
             {icon}
           </span>
         ))}

@@ -1,9 +1,14 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import pluginReact, { rules } from 'eslint-plugin-react';
+import pluginReact from 'eslint-plugin-react';
 
 export default [
+  {ignores: ['.next/', 'tailwind.config.ts']},
+  { languageOptions: { globals: globals.browser } },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     rules: {
@@ -24,10 +29,6 @@ export default [
       ],
       'react/jsx-no-leaked-render': ['error', { validStrategies: ['ternary'] }],
       'react/jsx-max-depth': ['error', { max: 5 }],
-      'react/function-component-definition': [
-        'warn',
-        { namedComponents: 'arrow-function' },
-      ],
       'react/jsx-key': [
         'error',
         {
@@ -47,8 +48,4 @@ export default [
       'react/prop-types': 'off',
     },
   },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
 ];

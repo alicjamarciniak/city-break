@@ -19,20 +19,20 @@ const TestimonialSwiper = ({ slides }: TestimonialSwiperProps) => {
 
   return (
     <Swiper
-      slidesPerView={1}
-      loop={true}
       allowTouchMove
-      speed={5000}
       autoplay={{
         delay: 4000,
         disableOnInteraction: true,
       }}
-      effect={'fade'}
-      fadeEffect={{ crossFade: true }}
       centeredSlides
-      pagination={{ clickable: true }}
-      modules={[Pagination, Navigation, Autoplay, EffectFade]}
       className="testimonialSwiper"
+      effect="fade"
+      fadeEffect={{ crossFade: true }}
+      loop={true}
+      modules={[Pagination, Navigation, Autoplay, EffectFade]}
+      pagination={{ clickable: true }}
+      slidesPerView={1}
+      speed={5000}
       style={{
         '--swiper-pagination-color': '#FFBA08',
         '--swiper-pagination-bullet-inactive-color': '#999999',
@@ -42,7 +42,7 @@ const TestimonialSwiper = ({ slides }: TestimonialSwiperProps) => {
         <SwiperSlide key={`slide-testimonial-${testimonial.id}`}>
           <div className="relative py-20 lg:pr-10 bg-dark">
             <div className="absolute z-[-1] opacity-20 top-14 lg:top-0 right-0 lg:right-10 transform rotate-180">
-              <LeftQuote size={isMobile ? 100 : 150} color="white" />
+              <LeftQuote color="white" size={isMobile ? 100 : 150} />
             </div>
             <div className="text-primary flex flex-row justify-left mb-6 gap-2">
               <StarFilledIcon className="w-5 h-5" />

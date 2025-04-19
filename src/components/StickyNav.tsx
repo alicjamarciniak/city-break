@@ -12,7 +12,7 @@ type StickyNavProps = {
   isHomepage?: boolean;
 };
 
-export function StickyNav({ isHomepage = false }: StickyNavProps) {
+export const StickyNav = ({ isHomepage = false }: StickyNavProps) => {
   const t = useTranslations('Nav');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -22,12 +22,12 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
 
   return (
     <>
-      {isMenuOpen && (
+      {isMenuOpen ? (
         <div
           className="fixed h-[100vh] w-[100vw] bg-black/30 z-[998]"
           onClick={toggleMenu}
-        ></div>
-      )}
+        />
+      ) : null}
 
       <nav
         className={`md:fixed top-0 h-[60px] m-0 ${isMenuOpen ? 'fixed bg-white w-[70vw] z-[999]' : 'absolute bg-transparent w-full z-[40]'}`}
@@ -36,12 +36,12 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
           <div className="flex justify-between items-center h-[60px] relative">
             {/* Left side navigation links (hidden on mobile) */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link href="/" className="text-gray-700 hover:text-gray-900">
+              <Link className="text-gray-700 hover:text-gray-900" href="/">
                 {t('linkHome')}
               </Link>
               <Link
-                href="/about"
                 className="text-gray-700 hover:text-gray-900"
+                href="/about"
                 onClick={handleWIPLinks}
               >
                 {t('linkAbout')}
@@ -52,14 +52,15 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
             <div
               className={`${isMenuOpen && 'hidden'} flex-shrink-0 flex items-center p-2 md:bg-white rounded-full absolute top-0 left-0 right-0 w-[96px] mx-auto`}
             >
-              <Link href="/" className="font-bold text-xl text-gray-900">
+              <Link className="font-bold text-xl text-gray-900" href="/">
+                {/* eslint-disable-next-line react/jsx-max-depth */}
                 <Image
-                  className={`${isHomepage ? 'invert' : 'filter-none'} md:filter-none w-16 h-16 md:w-auto md:h-auto`}
                   alt="logo"
-                  src="/images/logo.png"
-                  width={80}
+                  className={`${isHomepage ? 'invert' : 'filter-none'} md:filter-none w-16 h-16 md:w-auto md:h-auto`}
                   height={80}
                   priority
+                  src="/images/logo.png"
+                  width={80}
                 />
               </Link>
             </div>
@@ -67,15 +68,15 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
             {/* Right side navigation links (hidden on mobile) */}
             <div className="hidden md:flex items-center space-x-4">
               <Link
-                href="/services"
                 className="text-gray-700 hover:text-gray-900"
+                href="/services"
                 onClick={handleWIPLinks}
               >
                 {t('linkServices')}
               </Link>
               <Link
-                href="/contact"
                 className="text-gray-700 hover:text-gray-900"
+                href="/contact"
                 onClick={handleWIPLinks}
               >
                 {t('linkContact')}
@@ -86,8 +87,9 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
             {/* Mobile menu button */}
             <div className="md:hidden mt-3">
               <button
-                onClick={toggleMenu}
                 className={`${isHomepage ? 'text-white' : 'text-gray-700'} lg:text-gray-700 lg:hover:text-gray-900`}
+                onClick={toggleMenu}
+                type="button"
               >
                 {isMenuOpen ? (
                   <X className="text-gray-700" size={24} />
@@ -100,32 +102,32 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
         </div>
 
         {/* Mobile menu, show/hide based on menu state */}
-        {isMenuOpen && (
+        {isMenuOpen ? (
           <div className="md:hidden h-[100vh] z-[55]">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-[70vw] h-full bg-white">
               <Link
-                href="#"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                href="#"
               >
                 {t('linkHome')}
               </Link>
               <Link
-                href="/about"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                href="/about"
                 onClick={handleWIPLinks}
               >
                 {t('linkAbout')}
               </Link>
               <Link
-                href="/services"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                href="/services"
                 onClick={handleWIPLinks}
               >
                 {t('linkServices')}
               </Link>
               <Link
-                href="/contact"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                href="/contact"
                 onClick={handleWIPLinks}
               >
                 {t('linkContact')}
@@ -133,8 +135,8 @@ export function StickyNav({ isHomepage = false }: StickyNavProps) {
               <LanguageSwitcher />
             </div>
           </div>
-        )}
+        ) : null}
       </nav>
     </>
   );
-}
+};

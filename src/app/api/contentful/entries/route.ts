@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { contentfulClient } from '@/utils/contentful/contentfulClient';
 
-export async function GET(req: NextRequest): Promise<NextResponse<any>> {
+export async function GET(req: NextRequest): Promise<NextResponse<unknown>> {
   try {
     const { searchParams } = new URL(req.url);
     const contentType = searchParams.get('contentType');

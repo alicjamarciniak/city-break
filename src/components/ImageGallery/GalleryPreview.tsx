@@ -23,24 +23,21 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
   const { col1, col2, col3 } = gridBases[previewCount - 1];
 
   return (
-    <div className={`h-full w-full min-w-100 flex gap-3 relative`}>
+    <div className="h-full w-full min-w-100 flex gap-3 relative">
       <div
-        className={`flex relative rounded-md overflow-hidden`}
+        className="flex relative rounded-md overflow-hidden"
         style={{ flexBasis: `${!isMobile ? col1 : 100}%` }}
       >
         <Image
           alt={images[0].alt}
-          src={`https:${images[0].src}`}
           fill
+          src={`https:${images[0].src}`}
           style={{ objectFit: 'cover' }}
         />
       </div>
 
-      {!isMobile && previewCount > 2 && (
-        <div
-          className={`flex flex-col gap-3`}
-          style={{ flexBasis: `${col2}%` }}
-        >
+      {!isMobile && previewCount > 2 ? (
+        <div className="flex flex-col gap-3" style={{ flexBasis: `${col2}%` }}>
           <div className="flex flex-1 relative rounded-md overflow-hidden">
             <Image
               alt={images[1].alt}
@@ -58,10 +55,10 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
             />
           </div>
         </div>
-      )}
-      {!isMobile && previewCount !== 1 && previewCount !== 3 && (
+      ) : null}
+      {!isMobile && previewCount !== 1 && previewCount !== 3 ? (
         <div
-          className={`flex relative rounded-md overflow-hidden`}
+          className="flex relative rounded-md overflow-hidden"
           style={{ flexBasis: `${col3}%` }}
         >
           <Image
@@ -71,11 +68,12 @@ const GalleryPreview = ({ images, callback }: GalleryPreviewProps) => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-      )}
+      ) : null}
 
       <button
         className="absolute flex bottom-5 right-5 bg-white px-4 py-2 rounded-full shadow-lg"
         onClick={callback}
+        type="button"
       >
         <small className="text-2xs lg:text-xs font-thin">
           {t('seeFullGallery')} ({images.length})
