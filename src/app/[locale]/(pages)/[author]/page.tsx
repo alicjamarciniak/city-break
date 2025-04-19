@@ -13,7 +13,11 @@ export async function generateStaticParams() {
 }
 
 // TODO: Finish author section
-const AuthorPage = async ({ params }: { params: { author: AuthorSlug } }) => {
+const AuthorPage = async ({
+  params,
+}: {
+  params: Promise<{ author: AuthorSlug }>;
+}) => {
   const author = (await params).author;
   return <div>My Author name: {author}</div>;
 };

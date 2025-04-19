@@ -42,7 +42,11 @@ export async function generateStaticParams() {
   );
 }
 
-const AdventurePage = async ({ params }: { params: { id: number } }) => {
+const AdventurePage = async ({
+  params,
+}: {
+  params: Promise<{ id: number }>;
+}) => {
   const { id } = await params;
   const adventure = await getSingleAdventure(id.toString());
 
