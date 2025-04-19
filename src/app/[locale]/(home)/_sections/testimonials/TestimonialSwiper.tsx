@@ -33,10 +33,12 @@ const TestimonialSwiper = ({ slides }: TestimonialSwiperProps) => {
       pagination={{ clickable: true }}
       slidesPerView={1}
       speed={5000}
-      style={{
-        '--swiper-pagination-color': '#FFBA08',
-        '--swiper-pagination-bullet-inactive-color': '#999999',
-      }}
+      style={
+        {
+          '--swiper-pagination-color': '#FFBA08',
+          '--swiper-pagination-bullet-inactive-color': '#999999',
+        } as React.CSSProperties
+      }
     >
       {slides?.map((testimonial) => (
         <SwiperSlide key={`slide-testimonial-${testimonial.id}`}>
