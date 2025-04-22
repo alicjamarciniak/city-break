@@ -8,7 +8,7 @@ import { getLocale } from 'next-intl/server';
 
 const getAdventures = async (): Promise<Adventure[]> => {
   const response = await fetch(
-    `${process.env.API_BASE_URL}/api/contentful/entries?contentType=adventure`,
+    `${process.env.NEXT_PUBLIC_URL}/api/contentful/entries?contentType=adventure`,
     {
       method: 'GET',
     },
@@ -21,7 +21,7 @@ const getSingleAdventure = async (id: string): Promise<Adventure> => {
   const locale = await getLocale();
 
   const response = await fetch(
-    `${process.env.API_BASE_URL}/contentful/entry?locale=${locale}&contentType=adventure&entryId=${id}`,
+    `${process.env.NEXT_PUBLIC_URL}/contentful/entry?locale=${locale}&contentType=adventure&entryId=${id}`,
     {
       method: 'GET',
     },
