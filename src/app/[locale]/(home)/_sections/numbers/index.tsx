@@ -9,7 +9,7 @@ import SeeMoreBtn from './SeeMoreBtn';
 const getReviews = async (): Promise<Review[]> => {
   const locale = await getLocale();
   const response = await fetch(
-    `${process.env.API_BASE_URL}/api/contentful/entries?locale=${locale}&contentType=review`,
+    `${process.env.NEXT_PUBLIC_URL}/api/contentful/entries?locale=${locale}&contentType=review`,
     {
       method: 'GET',
     },

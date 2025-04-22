@@ -12,7 +12,7 @@ import { type RegionsResponse } from '@/app/api/regions/types.d';
 import { useTranslations } from 'next-intl';
 
 const getRegions = async (): Promise<RegionsResponse> => {
-  const response = await fetch(`${process.env.API_BASE_URL}/api/regions/`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/regions/`, {
     method: 'GET',
   });
   return response.json();
