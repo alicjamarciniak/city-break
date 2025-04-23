@@ -5,39 +5,28 @@ import Map from './AddressSection';
 import { ImageGallery, OrderedList } from '@/components';
 import SchedulerSection from './SchedulerSection';
 import { getLocale } from 'next-intl/server';
-
-const getAdventures = async (): Promise<Adventure[]> => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/contentful/entries?contentType=adventure`,
-    {
-      method: 'GET',
-    },
-  );
-  const data = await response.json();
-  return data;
-};
+import { contentfulClient } from '@/utils/contentful/contentfulClient';
 
 const getSingleAdventure = async (id: string): Promise<Adventure> => {
   const locale = await getLocale();
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/contentful/entry?locale=${locale}&contentType=adventure&entryId=${id}`,
-    {
-      method: 'GET',
-    },
-  );
-  const data = await response.json();
-  return data;
+  const entry = await contentfulClient.getEntry(id, {
+    ...(locale !== 'en' && { locale }),
+  });
+
+  return entry.fields as Adventure; // Adjust if needed
 };
 
 export async function generateStaticParams() {
   const locales = ['en', 'pl'];
-  const posts = await getAdventures();
+  const entries = await contentfulClient.getEntries({
+    content_type: 'adventure',
+  });
 
   return locales.flatMap((locale) =>
-    posts.map((post) => ({
+    entries.items.map((item) => ({
       locale,
-      id: post.id.toString(),
+      id: item.sys.id,
     })),
   );
 }
