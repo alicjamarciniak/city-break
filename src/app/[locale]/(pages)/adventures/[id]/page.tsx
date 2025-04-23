@@ -21,7 +21,7 @@ const getSingleAdventure = async (id: string): Promise<Adventure> => {
   const locale = await getLocale();
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/contentful/entry?locale=${locale}&contentType=adventure&entryId=${id}`,
+    `${process.env.NEXT_PUBLIC_URL}/api/contentful/entry?locale=${locale}&contentType=adventure&entryId=${id}`,
     {
       method: 'GET',
     },
